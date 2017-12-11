@@ -53,32 +53,30 @@ attraverso un read-eval-print loop,dove il programmatore può interattivamente
 aggiungere e rimuovere elementi in un programma. Una volta che il programma
 viene completato,può essere compilato per aumentarne le prestazioni.
 
-The typing system in CX is very strict. The only "implicit casting"
-occurs when the parser determines what is an integer, a float, a
-boolean, a string, or an array. If a function requires a 64 bit
-integer, for example, one has to use a cast function to explicitly
-convert it to the required type.
+Il sistema di battitura in CX è molto rigoroso. L'unico "casting implicito"
+si verifica quando il parser determina cos'è un integer , un float, un valore
+booleano, una stringa o un array. Per esempio, se una funzione richiede un 
+integer da 64 bit, occorre usare una funzione cast per convertirlo nel tipo
+richiesto.
 
-Lastly, a CX program can be completely serialized to byte arrays,
-maintaining its execution state and structure. This serialized version
-of a program can be deserialized later on, and continue its execution
-in any device that has a CX interpreter/compiler.
+Infine, un programma CX può essere completamente serializzato su arrays di byte,
+mantenendo il suo stato di esecuzione e la sua struttura. Questa versione 
+serializzata di un programma può essere deserializzata in seguito, e continuare
+la sua esecuzione in qualsiasi dispositivo che abbia un compilatore/interprete CX.
 
-In the following sections, the CX features discussed in the above
-paragraphs are described in more detail.
+Nele sezioni seguenti, le funzionalità di CX, illustrate nei precedenti paragrafi,
+sono descritte in maggior dettaglio.
 
-# Project's Repository
+# Archivio del Progetto
 
-The source code of the project can be downloaded from its Github
-repository:
-[https://github.com/skycoin/cx](https://github.com/skycoin/cx). The
-repository includes the specification file, documentation, examples,
-and the source code itself.
+Il codice sorgente del progetto può essere scaricato dal suo archivio Github :
+[https://github.com/skycoin/cx](https://github.com/skycoin/cx). L'archivio include
+i file di specifica, la documentazione, gli esempi e il codice sorgente stesso.
 
-# Syntax
+# Sintassi
 
-As was mentioned in the introduction, CX is both a specification and a
-programming language. The CX specification does not impose a syntax,
+Come è stato menzionato nell'introduzione, CX è sia un linguaggio di programmazione
+che una specifica. Le specifiche di CX non impongono una sintassi,
 but rather the structures and processes that a CX dialect must
 implement in order to be considered a CX. As a consequence, one could
 implement a two CX dialects, one with a Lisp-like syntax, and another
