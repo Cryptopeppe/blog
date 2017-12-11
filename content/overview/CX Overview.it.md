@@ -137,12 +137,12 @@ chiamare un operatore con meno argomenti del necessario, il sitema di affordance
 quando richiesto, dovrebbe dire al programmatore che è possibile aggiungere un 
 nuovo argomento alla funzione.
 
-**Example:**
+**Esempio:**
 
-*Note: string concatenation has not been implemented yet. Also, the
-print functions always append a newline at the end of the string being
-printed. A future version of the CX implementation presented in this
-document will address these issues.*
+*Nota: La concatenazione di stringhe non è ancora stata implementata. Inoltre,
+la funzione print allega sempre una nuova riga alla fine della stringa stampata.
+Una versione futura del'implementazione CX presentata in questo documento affronterà
+questi problemi.*
 
 ```
 var age i32 = 18
@@ -160,8 +160,8 @@ func main () () {
 }
 ```
 
-In the example above, the call to *advance* in the *main* function
-lacks one argument. If one queries the affordance system, the system
+Nell'esempio precedente, manca un argomento  nella chiamata a *advance* nella funzione *main*.
+If one queries the affordance system, the system
 should enlist, among other things, an action similar to:
 
 ```
