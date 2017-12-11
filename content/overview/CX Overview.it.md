@@ -161,8 +161,7 @@ func main () () {
 ```
 
 Nell'esempio precedente, manca un argomento  nella chiamata a *advance* nella funzione *main*.
-If one queries the affordance system, the system
-should enlist, among other things, an action similar to:
+Se si interroga il sistema affordance, il sistema dovrebbe adottare, tra le altre cose, un'azione simile a:
 
 ```
 ...
@@ -171,27 +170,25 @@ should enlist, among other things, an action similar to:
 ...
 ```
 
-where k represents an arbitrary index. As one can see, the affordance
-system is telling the programmer that two of the possible actions that
-can be done are to add another argument to the advance function, and
-the global definitions *age* and *steps* are among the options to act
-as arguments.
+dove k rappresenta un indice arbitrario. Come si può vedere, il sistema affordance
+sta dicendo al programmatore che due delle possibili azioni possono aggiungere un
+altro argomento alla funzione avanzata, e la definizione globale *age* e *steps* 
+sono fra le opzioni che agiscono come argomenti.
 
-It is noteworthy to mention that affordances should always be
-enumerated, and their order should be constant over several calls to
-the affordance system. The reason behind this is that the programmer
-should be able to indicate the system what affordance is to be applied
-after examining the query's result.
+E' interessante mezionare che le affordances dovebbero essere sempre enumerate, 
+e il loro ordine dovrebbe essere costante su diverse chiamate al sistema affordance.
+La ragione di ciò è che il programmatore dovrebbe essere in grado di indicare al sistema
+quale affordance deve essere applicata dopo aver esaminato il risultato della query.
 
-### Type Restrictions
+### Restrizioni sui Tipi
 
-The common behaviour in programming languages is to have a typing system
-which restricts the programmer from sending arguments of unexpected
-types to function calls. Even in weakly typed programming languages,
-an operation such as `true / "hello world"` should raise an error
-(unless in the case of an
-[esoteric language](https://en.wikipedia.org/wiki/Esoteric_programming_language),
-of course). CX follows a very
+Il comportamento comune nei linguaggi di programmazione è avere un sistema di 
+battitura che limitia il programmatore dall'inviare argomenti di tipi inaspettati
+alle funzioni chiamate.Anche nei linguaggi di programmazione debolemente tipizzati,
+un'operazione come `true / "hello world"` dovrebbe generare un errore
+(tranne nel caso dei
+[linguaggi esoterici](https://en.wikipedia.org/wiki/Esoteric_programming_language),
+certamente). CX follows a very
 [strict typing system](#strict-typing-system), and arguments that are
 not exactly of the expected type should not be considered as
 candidates for affordances' actions (although a workaround is to wrap
