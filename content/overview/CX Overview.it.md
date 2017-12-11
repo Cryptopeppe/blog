@@ -20,7 +20,7 @@ categories = [
     - [Restrizioni sui Tipi](#type-restrictions)
     - [Restrizioni Esistenziali](#existential-restrictions)
     - [Restrizioni di Identificazione](#identifier-restrictions)
-    - [Restrizioni di Confine](#boundaries-restrictions)
+    - [Restrizioni dei Confini](#boundaries-restrictions)
     - [Restrizioni Definite dall'Utente](#user-defined-restrictions)
 - [Sistema di Battitura Rigoroso](#strict-typing-system)
 - [Compilato e Interpretato](#compiled-and-interpreted)
@@ -188,50 +188,45 @@ alle funzioni chiamate.Anche nei linguaggi di programmazione debolemente tipizza
 un'operazione come `true / "hello world"` dovrebbe generare un errore
 (tranne nel caso dei
 [linguaggi esoterici](https://en.wikipedia.org/wiki/Esoteric_programming_language),
-certamente). CX follows a very
-[strict typing system](#strict-typing-system), and arguments that are
-not exactly of the expected type should not be considered as
-candidates for affordances' actions (although a workaround is to wrap
-these arguments in cast functions before being shown as affordances).
+certamente). CX segue un vero
+[sistema di battitura rigoroso](#strict-typing-system), e argomenti che non sono
+esattamente il tipo atteso non dovrebbero essere considerati come candidati
+per le azioni affordances (sebbene una soluzione temporanea sia quella di 
+avvolgere questi argomenti in funzioni cast prima di essere mostrate come affordances).
 
-Type restrictions must also be considered when assigning a new value
-to an already existant variable. In CX, a variable declared of a
-certain type must remain of that type during all of its lifetime
-(unless it is removed using meta-programming commands/functions and
-created anew). Thus, a variable declared to hold a 32 bit integer should not
-be considered as a candidate to receive a 64 bit float output
-argument, for example.
+Le restrizioni sui tipi devono essere considerate quando si sta assegnando
+un nuovo valore a una variabile già esistente. In CX, una variabile dichiarata
+a un certo tipo deve rimanere di quel tipo durante tutta la sua durata. Quindi, 
+una varibile dichiarata di 32 bit interi non dovrebbe essere considerata come
+candidata per ricevere come output un argomento float da 64 bit, per esempio.
 
-### Existential Restrictions
+### Restrizioni Esitenziali
 
-This type of restriction can seem trivial at first sight: if an
-element does not exist, an affordance that involves it should not
-exist either. Nevertheless, this restriction becomes a challenge once
-we consider a situation where a function was renamed, and it has
-already been used as an operator in expressions throughout a
-program. If the program is in its source code form, this problem is
-reduced to a simple "search & replace" process, but if it's during
-runtime, the affordance system becomes very useful: an affordance
-to change the identifier bound to this operator.
+Questo tipo di restrizione può sembrare irrilevante a prima vista: se un elemento
+non esiste, un affordance che lo coinvolge non dovrebbe nemmeno esistere. 
+ciò nonostante, questa restrizione diventa una sfida una volta che consideriamo
+una situazione dove una funzione è stata rinominata, ed è già stato usato come
+operatore in un'espressione durante un programma. Se il programma è nel suo modulo codice sorgente,
+questo problema viene ridotto a un semplice processo "cerca & sostituisci", 
+ma se è durante il processo di esecuzione, il sistema di affordance diventa davvero utile: 
+un affordance per cambiare l'identificatore legato a questo operatore.
 
-Even if an element has not be renamed, determining if an element
-exists or not is not trivial. The elements to be used in affordances
-must be searched in the call stack's current scope, in the global
-scope, and in other modules' global scopes.
+Anche se un elemento non è stato rinominato, non è facile determinare se un elemento 
+esiste o no. Gli elementi da utilizzare nelle affordances devono essere ricercati nella
+chiamata allo stack's current scope , nel global scope, e in altri moduli global scope.
 
-### Identifier Restrictions
+### Restrizioni di Identificazione
 
-Adding new named elements are commonly candidate actions for affordances. A
-restriction that arises when trying to apply such type of affordance
-is to ensure a unique identifier for the new element to avoid
-redefinitions. The affordance system can either generate a unique
-identifier in the element's scope, or can ask the programmer to
-provide a suitable identifier.
+L'aggiunta di nuovi elementi nominati sono azioni comunemente candidate per le affordances.
+Una restrizione che si presenta quando si sta provando ad applicare questo tipo di affordance
+è quello di garantire un unico identificatore per il nuovo elemento per evitare ridefinizioni.
+Il sistema affordance può generare un unico identificatore nell'element scopo, o può chiedere
+al programmatore di fornire un identifier adatto.
 
-### Boundaries Restrictions
+### Restrizione dei Confini
 
-CX provides native functions for accessing and modifying elements from
-arrays. Examples of an array reader and an array writer are:
+CX fornisce funzioni native per l'accesso e la modifica di elementi dagli arrays.
+Esempi di un lettore di array e di uno scrittore array sono:
 
 
 ```
@@ -239,45 +234,41 @@ readI32([]i32{0, 10, 20, 30}, 3)
 writeF32([]f32{0.0, 10.10, 20.20}, 1, 5.5)
 ```
 
-In the first expression, an array of four 32 bit integers is accessed
-at index 3, which returns the last element of the array. In the second
-expression, the second element of an array of three 32 bit floats is
-changed to 5.5. If any of these arrays was accessed using either a
-negative index or an index which exceeds the length of the array, an
-"out of boundaries" error is raised.
+nella prima espressione, si accede a un array di quattro integers da 32 bit
+all'indice 3, il quale restituisce l'ultimo elemento dell'array. Nella seconda
+espressione, il secondo elemento di un array di tre floats da 32 bit è cambiato a 5.5. 
+se viene effettuato l'accesso a uno di questi arrays usando o un indice negativo o un 
+indice che eccede la lungezza dell'array, viene generato un errore "fuori dai limiti" .
 
-By obeying only the type restrictions, the affordance system will tell
-the programmer that any 32 bit integer argument can be used as an
-index to access any array. Although these programs would compile, out
-of boundaries errors are very probable to occur if the programmer does not
-pay extra attention to what is being chosen to be applied.
+Obbedendo solo alla restrizione sui tipi, il sistema affordance dirà
+al programmatore che qualsiasi integer a 32 bit come argomento può essere usato
+come un indice per accedere a qualsiasi array. Sebbene questi programmi possano essere
+compilati, errori di confine sono molto probabili se il programmatore non presta
+attenzione extra su ciò che viene scelto per essere applicato.
 
-The affordance system needs to filter the affordances according to the
-following criteria: discard any negative 32 bit integer, and discard
-any 32 bit integer which exceeds the length of the array being sent to
-the array reader or writer.
+Il sistema affordance ha bisogno di filtrare le affordances secondo 
+i seguenti criteri: scartare qualsiasi integer negativo a 32 bit, e scartare
+qualsiasi integer a 32 bit che superi la lunghezza dell'array inviato al
+lettore o scrittore array.
 
-### User-defined Restrictions
-*Note: The user-defined restrictions system is still in its
- experimental stages.*
+### Restrizioni Definite dall'Utente
+*Nota: Il sistema di restrizioni definite dall'utente è ancora
+nella sua fase sperimentale.*
 
-The basic restrictions described above should at least guarantee that
-the program does not encounter any runtime errors. These restrictions
-should be enough to build some interesting systems, such as CX's
-native
-[evolutionary algorithm](#integrated-evolutionary-algorithm). Nevertheless,
-in some situations a more robust system is required. For this purpose,
-clauses, queries and objects are used to describe a module's
-environment. These elements are defined by using an integrated Prolog
-interpreter, and the CX native functions *setClauses*, *setQuery*, and
-*addObject*.
+Le restrizioni di base sopra descritte dovrebbero almeno garantire
+che il programma non incontri nessun errore di runtime. Queste restrizioni
+dovrebbero bastare per costruire alcuni sistemi interessanti, come
+[l'algoritmo evoluzionistico](#integrated-evolutionary-algorithm) nativo di CX. 
+Tuttavia, in alcune situzioni è richiesto un sistema più robusto. Per questo scopo,
+clausole, queries e oggetti sono usati per descrivere l'ambiente del modulo. 
+Questi elementi sono definiti usando un interprete Prolog integrato, 
+e le funzioni native di CX *setClauses*, *setQuery*, e *addObject*.
 
-The most general description of this restriction system is that the
-programmer defines a series of Prolog clauses (facts and rules), that
-will be queried using the defined Prolog query, for each of the
-objects added. This will hardly make any sense to anyone reading this
-for the first time. An example should clarify the concepts and the
-process a bit more:
+La descrizionepiù generale di questo sistema di restrizione è che
+il programmatore definisce una serie di clausole Prolog (fatti e regole), 
+che saranno interrogate usando una query prolog definita, per ogniuno 
+degli oggetti aggiunti. Ciò non avrà alcun senso per chiunque lo legga per la 
+prima volta. Un esempio dovrebbe chiarire i concetti e il processo un po di più:
 
 ```
 setClauses("move(robot, north, X, R) :- X = northWall, R = false.")
@@ -285,32 +276,30 @@ setClauses("move(robot, north, X, R) :- X = northWall, R = false.")
 setQuery("move(robot, %s, %s, R).")
 ```
 
-In this example, only one rule is defined. The rule can roughly be
-interpreted as "if the robot wants to move north, ask what is X. If X
-is northWall, then it can't move." The query is just a format string
-that will serve as a query for the *move* action, and for the *robot*
-element that will receive two more arguments: a direction, and an
-object.
+In questo esempio, è definita solamente una regola. a regola può essere
+grossolanamente interpretata come "se il robot vuole muoversi verso nord, 
+chiedi cos'è X. se X è northWall, quindi non può muoversi". La query è solo
+una stringa di formato che fungerà come query per l'azione *move*, e per 
+l'elemento *robot* che riceverà altri due argomenti: una direzione e un oggetto.
 
-Objects can be defined by using the *addObject* function:
+Gli oggetti possono essere definiti usando la funzione *addObject*:
 
 ```
 addObject("southWall")
 addObject("northWall")
 ```
 
-The restriction system will query the system for each of the objects
-present in the module. In this example, the system will first perform
-the query "move(robot, north, southWall)," and the system will respond
-"nil," which means that it does not have any rule defined to handle
-such situation, and the default action is to not discard the
-affordance. The second query will be "move(robot, north, northWall),"
-and the system will respond "false." In this case, the affordance did
-not pass the test, and is discarded.
+Il sistema di restrizione interrogherà il sitema per ogni oggetto presente 
+nel modulo. In questo esempio, il sistema performerà prima la query "move(robot, north, southWall)," 
+e il sistema risponderà "nil," il quale significa che non vi è alcuna regola definita
+per gestire tale situazione, e che l'azione predefinita non è quella di scartare 
+l'affordance. La seconda query sarà "move(robot, north, northWall),"
+e il sistema risponderà "false." In questo caso, l'affordance non ha superato il test 
+ed è quindi scartato.
 
-The example above illustrates how these rules can negate an
-affordance using a condition. But rules can also be used to accept
-affordances, even after being negated by previous rules.
+L'esempio sopra illustra come queste regole possono negare un affordance usando
+una condizione. Ma le regole possono essere usate per accettare affordances, anche se 
+negate da regole precedenti.
 
 ```
 setClauses("move(robot, north, X, R) :- X = northWall, R = false.
@@ -319,61 +308,63 @@ setClauses("move(robot, north, X, R) :- X = northWall, R = false.
 setQuery("move(robot, %s, %s, R).")
 ```
 
-The added rule in the code above tells the system to accept the robot
-movement towards north if a wormhole is present. If the object array
-is left as it was defined before, the movement affordance will still
-be discarded, but if `addObject("northWormhole")` is evaluated, the
-"northWormhole" will be added and the robot will be able to pass
-through the wall using the wormhole.
+La regola aggiunta nel codice sopra dice al sistema di accettare
+il movimento del robot verso nord se è presente un wormhole. Se l'oggetto
+array è lasciato come definito precedentemente, il movimento affordance
+verrà ancora scartato, ma se `addObject("northWormhole")` viene valutato, il
+"northWormhole" verrà aggiunto e il robot sarà in grado di passare
+attraverso il muro usando il wormhole.
 
-# Strict Typing System
+# Sistema di Battitura Rigoroso
 
-As mentioned in the introduction, there is no implicit casting in
-CX. Because of this, multiple versions for each of the primitive types
-are defined in the core module. For example, four native functions for
-addition exist: addI32, addI64, addF32, and addF64.
+Come menzionato nell'introduzione, non esiste un cast implicito in
+CX. A causa di ciò, sono definite più versioni di ogni tipo primitivo
+nel modulo principale. Per esempio, esistono quattro funzioni 
+native aggiunte: addI32, addI64, addF32, e addF64.
 
-The parser attaches a default type to data it finds
-in the source code: if an integer is read, its default type is *i32*
-or 32 bit integer; and if a float is read, its default type is *f32* or 32
-bit float. There is no ambiguity with other data read by the parser:
-*true* and *false* are always booleans; a series of characters
-enclosed between double quotes are always strings; and array needs to
-indicate its type before the list of its elements, e.g., `[]i64{1, 2,
+Il parser allega un tipo predefinito ai dati che trova all'interno
+del codice sorgente: se un integer è letto, il suo tipo di default è *i32*
+o un integer da 32 bit; e se un float è letto, il suo tipo di default è *f32*
+o un float da 32 bit. Non c'è alcuna ambiguità con gli altri dati letti 
+dal parser: *true* e *false* sono sempre booleani; una serie di caratteri 
+racchiusi tra virgolette sono sempre stringhe; e l'array ha bisogno di 
+indicare il suo tipo prima dell'elenco dei suoi elementi, esempio, `[]i64{1, 2,
 3}`.
 
-For the cases where the programmer needs to explicitly cast a value of
-one type to another, the core module provides a number of cast
-functions to work with primitive types. For example, `byteAToStr`
-casts a byte array to a string, and `i32ToF32` casts a 32 bit integer
-to a 32 bit float.
+Per i casi in cui il programmatore ha bisogno di esprimere esplicitamente 
+di cast un valore di un tipo a un'altro, il modulo principale fornisce un 
+numero di funzioni cast che lavorano con tipi primitivi. Per esempio, `byteAToStr`
+casts un byte array a una stringa, e `i32ToF32` casts un integer a 32 bit
+a un float a 32 bit.
 
-# Compiled and Interpreted
+# Compilato e Interpretato
 
-The CX specification enforces a CX dialect to provide the developer
-with both an interpreter and a compiler. An interpreted program is far
-slower than its compiled counterpart, as is expected, but will allow a
-more flexible program. This flexibility comes from meta-programming
-functions, and affordances, which can modify a program's structure
-during runtime.
+La specifica CX rafforza un dialetto CX per fornire allo sviluppatore
+sia un interprete sia un compilatore. Un programma interpretato è molto 
+più lento della sua controparte compilata, come previsto, ma permetterà
+un programma maggiormente flessibile. Questa flessibilità deriva dalle
+funzioni di meta-programmazione e affordances, capaci di modificare la 
+struttura di un programma durante il suo tempo di esecuzione.
 
-A compiled program needs a more rigid structure than an interpreted
-program, as many of the optimizations leverage this rigidity. As a
-consequence, the affordance system and any function that operates over
-the program's structure will be limited in functionality in a compiled
-program.
+Un programma compilato ha bisogno di una struttura più rigida di un 
+programma interpretato, poichè molte delle ottimizzazioni sfruttano
+questa rigidità. Come conseguenza, il sistema affordance e qualsiasi
+funzione che operi sulla struttura di un programma sarà limitata in 
+quanto a funzionalità in un programma compilato.
 
-The compiler should be used when performance is the biggest concern,
-while a program should remain being interpreted when the programmer
-requires all the flexibility provided by the CX features. In the
-following subsections, some of these features are presented, without
-the aim of serving as a tutorial, but rather as a mere introduction.
+Il compiler dovrebbe essere usato quando la performance rappresenta il 
+la maggiore preoccupazione, mentre un programma dovrebbe rimanere interpretato
+quando il programmatore richiede tutta la flessibilità fornita dalle 
+funzionalità di CX. Nella subsezione seguente, vengono presentate alcune di queste
+funzionalità, senza lo scopo di servire come tutorial ma piuttosto come semplice
+introduzione.
 
 ### Read-Eval-Print Loop
 
-The read-eval-print loop (REPL) is an interactive tool where a
-programmer can input new program elements and evaluate them. Starting
-a new REPL session will print the following messages to the console:
+Il read-eval-print loop (REPL) è uno strumento interattivo dove un 
+programmatore può inserire nuovi elementi nel programma e valutarli. 
+Iniziando una nuova sessione REPL sarà stampato il seguente messaggio 
+sulla console:
 
 ```
 CX REPL
@@ -382,13 +373,14 @@ More information about CX is available at https://github.com/skycoin/cx
 *
 ```
 
-The "*" tells the programmer that the REPL is ready to receive a new
-line of code. The REPL will keep reading input from the user until a
-semicolon and a new line character are encountered.
+Il "*" dice al programmatore che il REPL è pronto per ricevere una nuova
+linea di codice. Il REPL continuerà la lettura degli input dell'utente
+fino a che non viene rilevato un punto e virgola e un carattere di nuova
+riga.
 
-If no program was initially loaded into the REPL, CX will start with
-an empty program. This can be seen if the `:dProgram true;`
-meta-programming command is given as input:
+Se inizialmente nessun programma viene caricato in REPL, CX comincierà
+con unprogramma vuoto. ciò può essere visto se `:dProgram true;`
+il comando di meta-programmazione è dato come input:
 
 
 ```
@@ -398,11 +390,12 @@ Program
 *
 ```
 
-The REPL is only printing the word "Program" followed by an empty
-line. As a first step, a new module and function can be declared:
+Il REPL sta solo stampando la parola "Program" seguita da una linea
+vuota. come primo step, può essere dichiarato un nuovo modulo e una
+nuova funzione:
 
-As the first steps, a new *main* module and a new *main* function
-should be declared:
+Come primo step, andrebbe dichiarato un nuovo modulo *main* 
+e una nuova funzione *main*:
 
 ```
 * package main;
@@ -418,62 +411,64 @@ Program
 *
 ```
 
-As can be seen, the program structure is being printed every time a
-new element is added to the program.
+Come può essere visto, la struttura del programma viene stampata ogni volta
+che un nuovo elemento viene aggiunto al programma.
 
-### Meta-programming Commands
+### Comandi di Meta-Programmazione
 
-`:dProgram` was used in the subsection above. Any statement that
-starts with a colon (:) is part of a category of instructions known as
-"meta-programming commands."
+`:dProgram` è stato utilizzato nella sottosezione precedente. Ogni affermazione
+che comincia con i due punti(:) fa parte di una categoria di istruzioni conosciuta come
+"comandi di meta-programmazione."
 
-Declaring elements in the REPL instructs CX to add them to the
-program's structure. But, as in many other programming languages,
-these declarations are limited to only be added, and at most be
-redefined.
+Dichiarare elementi in REPL instruisce CX ad aggiungerli alla struttura 
+del programma. Ma, come in molti altri linguaggi di programmazione,
+queste dichiarazioni sono limitate all'essere solo aggiunte, e al massimo 
+essere ridefinite.
 
-But, as in many other programming languages that provide a REPL, the
-programmer is limited to adding new elements to a program and, at
-most, redefining elements. Meta-programming commands allow the
-programmer to be in more control on how the program's structure is
-being modified.
+Ma, come in molti altri linguaggu di programmazione che forniscono REPL, il
+programmatore è limitato ad aggiungere nuovi elementi al programma e, al 
+massimo, ridefinire elementi. I comandi di meta-programmazione consentono al 
+programmatore di aver maggior controllo su come la struttura del programma 
+viene modificata.
 
-`:dProgram`, `:dState`, and `:dStack` are used for
-debugging purposes only, by printing the program's structure, the
-current call's state, and the full call stack to the user,
-respectively. `:step` instructs the interpreter to go forward or
-backward in its execution. `:package`, `:func`, and `:struct`, known
-as *selectors*, are used to change the program's scope. `:rem` gives
-the programmer access to *removers*, which can be used to selectively
-remove elements from a program's structure. `:aff` is used to access
-CX's affordance system; this meta-programming command is used to both
-query and apply affordances for the different elements of a
-program. Lastly, `:clauses` is used to set a module's clauses to be used by the
-[user-defined restrictions system](#user-defined-restrictions);
-`:object` and `:objects` are used for adding and printing objects,
-respectively; and the last two meta-programming commands: `:query`,
-which is used for setting the module's query, and `:dQuery` which is a
-helper for debugging the user-defined restrictions.
+`:dProgram`, `:dState`, e `:dStack` sono usati solo per
+scopi di debugging, stampando la struttura del programma, rispettivamente
+lo stato correntemente chiamato e lo stack completo chiamato dall'utente. 
+`:step` istruisce l'interprete ad andare avanti o indietreggiare
+nella sua esecuzione. `:package`, `:func`, e `:struct`, conosciuto
+come *selectors*, viene usato per cambiare lo scope del programma. `:rem`
+da al programmatore l'accesso a *removers*, che può essere usato per 
+rimuovere selettivamente elementi dalla struttura di un programma.
+`:aff` è usato per accedere al sistema affordance di CX;
+questo comando di meta-programmazione è usato sia come query sia
+per applicare affordances per differenti elementi di un programma. 
+Infine, `:clauses` è usato per impostare le clausole di un modulo che
+devono essere usate dal
+[sistema di restrizioni definito dall'utente](#user-defined-restrictions);
+`:object` e `:objects` sono usati, rispettivamente, per aggiungere e stampare oggetti; 
+e gli ultimi due comandi di meta-programmazione: `:query`,
+che è usato per impostare la query del modulo, e `:dQuery` che aiuta
+per il debbuging delle restrizioni definite dall'utente.
 
 ### Stepping
 
-A program started in REPL mode can be initialized with a program
-structure defined in a source file. For example:
-current directory
+Un programma cominciato in modalità REPL può essere inizializzato
+con una struttura di programma definita in un file sorgente. Per esempio:
+directory corrente
 
 ```
 $ ./cx --load examples/looping.cx
 
 ```
 
-loads `looping.cx` from the examples directory (the full list of
-examples can be found in the
-[project's repository](https://github.com/skycoin/cx)). Even though a
-program has been loaded, it has not yet been executed. In the REPL, in
-order to execute a program one has to use the meta-programming command
-`:step`. To run a program until the end, `:step 0;` must be used. But
-`:step` is interesting because it can take other integers as its
-argument (even negative integers). For example:
+carica `looping.cx` dalla directory esempi (la lista completa di 
+esempi può essere trovata nell'
+[Archivio del progetto](https://github.com/skycoin/cx)). Nonostante un 
+programma sia stato caricato, non è stato ancora eseguito. nella REPL, per
+poter eseguire un programma si deve usare il comando di meta-programmazione
+`:step`. Per eseguire un programma fino alla fine, `:step 0;`deve essere usato.
+Ma `:step` è interessante perchè puo prendere altri integers come sui argomenti
+(anche integers negativi). Per esempio:
 
 ```
 CX REPL
@@ -493,7 +488,7 @@ More information about CX is available at https://github.com/skycoin/cx
 *
 ```
 
-The *examples/looping.cx* program is being run 5 steps at a time. We
+Il programma *examples/looping.cx* is being run 5 steps at a time. We
 can see that 5 steps are required in order for the program to
 re-evaluate the *while* condition, print the counter, and add 1 to the
 counter.
