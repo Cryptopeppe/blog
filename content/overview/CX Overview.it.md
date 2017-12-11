@@ -13,7 +13,7 @@ categories = [
 <!-- MarkdownTOC autolink="true" bracket="round" depth="2" -->
 
 - [Introduzione di CX](#cx-introduction)
-- [Archivio deL Progetto](#projects-repository)
+- [Archivio del Progetto](#projects-repository)
 - [Sintassi](#syntax)
 - [Affordances](#affordances)
     - [Restrizioni Arity](#arity-restrictions)
@@ -37,21 +37,21 @@ categories = [
 
 CX è sia un linguaggio di programmazione che una specifica designato per 
 abbracciare un nuovo paradigma di programmazione basato sul concetto di 
-"affordance". Affordances allow a program to know what actions can and
-cannnot be done by it. For example, we can ask the program what
-arguments can be sent to a function, and the program will return a
-list of possible actions. After having decided what action from the
-list is appropriate, we can choose one of the options and the program
-will apply the chosen action. As a consequence of CX's affordance system, a
-genetic programming algorithm is built and provided as a native
-function, which can be used to optimize the program's structure during
-runtime.
+"affordance". L'Affordances permette a un programma di conoscere quali azioni
+possono o non possono essere fatte dallo stesso. Per esempio, possiamo chiedere
+al programma quali elementi possono essere inviati a una funzione, e il programma
+ci restituirà un elenco di possibili azioni. Dopo aver deciso quale azione della
+lista è appropriata, possiamo scegliere una delle opzioni e il programma
+applicherà l'azione scelta. Come conseguenza del sistema di "affordance" di CX, 
+un algoritmo di programmazione genetica è costruito e fornito come funzione
+nativa, la quale può essere usata per ottimizzare la struttura del programma
+durante la fase di esecuzione.
 
-The CX specification states that both a compiler and an interpreter
-must be accessible to the programmer. The interpreter can be accessed
-through a read-eval-print loop, where the programmer can interactively
-add and remove elements to a program. Once the program has been
-finished, it can be compiled in order to increase its performance.
+La specifica CX afferma che sia un compilatore che un interprete devono
+essere accessibili al programmatore. L'interprete può essere accessibile
+attraverso un read-eval-print loop,dove il programmatore può interattivamente
+aggiungere e rimuovere elementi in un programma. Una volta che il programma
+viene completato,può essere compilato per aumentarne le prestazioni.
 
 The typing system in CX is very strict. The only "implicit casting"
 occurs when the parser determines what is an integer, a float, a
