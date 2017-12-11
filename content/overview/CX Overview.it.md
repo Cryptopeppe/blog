@@ -49,7 +49,7 @@ durante la fase di esecuzione.
 
 La specifica CX afferma che sia un compilatore che un interprete devono
 essere accessibili al programmatore. L'interprete può essere accessibile
-attraverso un read-eval-print loop,dove il programmatore può interattivamente
+attraverso un read-eval-print loop, dove il programmatore può interattivamente
 aggiungere e rimuovere elementi in un programma. Una volta che il programma
 viene completato,può essere compilato per aumentarne le prestazioni.
 
@@ -76,67 +76,66 @@ i file di specifica, la documentazione, gli esempi e il codice sorgente stesso.
 # Sintassi
 
 Come è stato menzionato nell'introduzione, CX è sia un linguaggio di programmazione
-che una specifica. Le specifiche di CX non impongono una sintassi,
-but rather the structures and processes that a CX dialect must
-implement in order to be considered a CX. As a consequence, one could
-implement a two CX dialects, one with a Lisp-like syntax, and another
-one with a C-like syntax. This underlaying language is called CX Base,
-or "the base language." In this document, an implementation is used to
-showcase the capabilities of the specification, although its purpose
-is not only to serve as an academic tool, but to become a complete and
-robust language that can be used for general purposes.
+sia una specifica. Le specifiche di CX non impongono una sintassi,
+ma piuttosto strutture e processi che un dialetto CX deve implementare
+per essere considerato un CX. Come conseguenza, si potrebbero implementare
+due dialetti CX, uno con una sintassi simile a quella del Lisp e un'altra come
+la sintassi del C. Questo linguaggio sottostante è chiamato CX Base,
+o "il linguaggio di base". In questo documento, un'implementazione è usata
+per mostrare le capacità della specifica, sebbene il suo scopo non è solo
+quello di strumento accademico,ma quello di diventare un linguaggio robusto e
+completo che possa essere utilizzato per scopi generali.
 
-The CX used in this document has the goal to have a syntax as similar
-as possible to Go's syntax.
+Il CX utilizzato in questo documento ha l'obiettivo generale di avere una sintassi
+il più simile possibile alla sintassi del linguaggio GO.
 
 # Affordances
 
-A programmer needs to make a plethora of decisions while constructing
-a program, e.g., how many parameters a function must receive, how many
-parameters it must return, what statements are needed to obtain the
-desired functionality, and what arguments need to be sent as
-parameters to the statement functions, among others. The affordance
-system in CX can be queried to obtain a list of the possible actions
-that can be applied to an element. In this context, examples of elements are
-functions, structs, modules, and expressions.
+Un programmatore deve prendere una serie di decisioni durante la costruzione
+di un programma, per esempio, quanti paramentri una funzione deve ricevere, 
+quanti parametri deve restituire, quali dichiarazioni sono necessarie per
+ottenere la funzionalità desiderata e, inoltre, quali argomenti devono essere
+inviati come parametri per le funzioni di asserzione. Il sistema di affordance
+in CX può essere interrogato per ottenere una lista delle possibili azioni
+che possono essere applicate a un elemento. In questo contesto, esempi di 
+elementi sono funzioni, strutture, moduli ed espressioni. 
 
-Without having a set of rules and facts that dictate what must be the
-logic and purpose behind a program, one can determine some basic
-restrictions that, at least, guarantee that a program will be
-semantically correct. The affordance system provides such restrictions
-as the first filtering layer, and are explained below.
+Senza avere un insieme di regole e fatti che stabiliscano quale debba essere la
+logica e lo scopo di un programma, si possono determinare alcune restrizioni di
+base, che almeno, garantirebbero la corretta semantica di un programma. Il sistema
+di affordance fornisce tali restrizioni come primo strato filtrante, e sono spiegate
+di seguito.
 
-### Arity Restrictions
+### Restrizioni Arity
 
-Expressions in CX can return multiple values. This creates a challenge
-for the affordance system, as the number of variables that receive
-the output arguments of an expression need to match the number of
-outputs defined by the expression's operator.
+Le espressioni in CX possono restituire differenti valori. Ciò crea una sfida
+per il sistema affordance, siccome il numero di variabili che ricevono gli argomenti
+di output di un'espressione devono corrispondere al numero di outputs definiti dall'
+operatore dell'espressione.
 
 ```
 out1, out2, ..., outN := op(inp1, inp2, ..., inpM)
 ```
 
-If the example above is correct, then *op* needs to output *N*
-arguments. This problem can become even more challenging if we
-consider that *op*'s definition can be changed by the affordance
-system itself or by the user in the future: as soon as *op*'s
-definition changes, new affordances can be applied to any expression
-which uses *op* as its operator, because the number of variables that
-receive *op*'s output arguments are now in mismatch.
+Se l'esempio sopra è corretto, allora *op* deve produrre *N* argomenti.
+Questo problema può diventare ancora più difficile se consideriamo
+che la definizione di *op* può essere cambiata dal sistema affordance stesso
+o dall'utente in futuro: Non appena la definizione di *op* cambia, possono 
+essere applicate nuove affordances a qualsiasi espressione che usi *op* come suo
+operatore, perchè il numero di variabili ricevute come argomento output di *op*,
+sono adesso non in corrispondenza.
 
-The previous logic also implies that if the number of receiving
-variables matches the number of output parameters of the expression's
-operator, the action of adding new receiving variables can no longer
-be performed.
+La logica precedente implica, inoltre, che se il numero delle variabili in ricezione
+corrisponde al numero di parametri in output dell'espressione dell'operatore, l'azione
+di aggiungere nuove variabili in ricezione non può essere eseguita.
 
-Arity restrictions also apply to input arguments in expressions, i.e.,
-if a function call has already all of its input arguments defined,
-then the affordance system should not enlist adding another argument
-as a possible action. Likewise, if an expression is trying to call an
-operator with fewer arguments than the required, the affordance
-system, when queried, should tell the programmer that adding a new
-argument to the function call is possible.
+Le restrizioni Arity si applicano anche agli argomenti di input nelle espressioni, 
+ad esempio,se la chiamata a una funzione ha già tutti gli argomenti in input 
+definiti, allora il sistema di affordance non dovrebbe aggiungere un altro 
+argomento come possibile azione. Similmente, se un'espressione sta cercando di 
+chiamare un operatore con meno argomenti del necessario, il sitema di affordance,
+quando richiesto, dovrebbe dire al programmatore che è possibile aggiungere un 
+nuovo argomento alla funzione.
 
 **Example:**
 
