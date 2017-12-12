@@ -12,7 +12,7 @@ categories = [
 
 <!-- MarkdownTOC autolink="true" bracket="round" depth="2" -->
 
-- [Introduzione di CX](#cx-introduction)
+- [Introduzione a CX](#cx-introduction)
 - [Archivio del Progetto](#projects-repository)
 - [Sintassi](#syntax)
 - [Affordances](#affordances)
