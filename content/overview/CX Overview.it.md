@@ -33,7 +33,7 @@ categories = [
 
 <!-- /MarkdownTOC -->
 
-# Introduzione di CX
+# Introduzione a CX
 
 CX è sia un linguaggio di programmazione che una specifica designato per 
 abbracciare un nuovo paradigma di programmazione basato sul concetto di 
