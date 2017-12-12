@@ -154,7 +154,7 @@ Segue la descrizione dell'algoritmo di consenso di Skycoin.
 [^3]: Questo numero può essere determinato, per esempio, chiedendo ai nodi
       di fiducia di riferire le chiavi private dei loro nodi di fiducia, ricorsivamente.
 
-## Reference
+## Referenze
 
 \[1\] johnstuartmill et al. A Distributed Consensus Algorithm for
 Cryptocurrency Networks.
