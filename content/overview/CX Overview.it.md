@@ -19,8 +19,8 @@ categories = [
     - [Restrizioni Arity](#arity-restrictions)
     - [Restrizioni sui Tipi](#type-restrictions)
     - [Restrizioni Esistenziali](#existential-restrictions)
-    - [Restrizioni di Identificazione](#identifier-restrictions)
-    - [Restrizioni dei Confini](#boundaries-restrictions)
+    - [Restrizioni di identificatore](#identifier-restrictions)
+    - [Restrizioni sui Limiti](#boundaries-restrictions)
     - [Restrizioni Definite dall'Utente](#user-defined-restrictions)
 - [Sistema di Battitura Rigoroso](#strict-typing-system)
 - [Compilato e Interpretato](#compiled-and-interpreted)
@@ -35,11 +35,11 @@ categories = [
 
 # Introduzione a CX
 
-CX è sia un linguaggio di programmazione che una specifica designato per 
+CX è sia un linguaggio di programmazione sia una specifica, designato per 
 abbracciare un nuovo paradigma di programmazione basato sul concetto di 
-"affordance". L'Affordances permette a un programma di conoscere quali azioni
+"affordance". Le Affordances permettono a un programma di conoscere quali azioni
 possono o non possono essere fatte dallo stesso. Per esempio, possiamo chiedere
-al programma quali elementi possono essere inviati a una funzione, e il programma
+al programma quali argomenti possono essere inviati a una funzione, e il programma
 ci restituirà un elenco di possibili azioni. Dopo aver deciso quale azione della
 lista è appropriata, possiamo scegliere una delle opzioni e il programma
 applicherà l'azione scelta. Come conseguenza del sistema di "affordance" di CX, 
@@ -47,17 +47,17 @@ un algoritmo di programmazione genetica è costruito e fornito come funzione
 nativa, la quale può essere usata per ottimizzare la struttura del programma
 durante la fase di esecuzione.
 
-La specifica CX afferma che sia un compilatore che un interprete devono
-essere accessibili al programmatore. L'interprete può essere accessibile
-attraverso un read-eval-print loop, dove il programmatore può interattivamente
+La specifica CX afferma che sia un compilatore sia un interprete devono
+essere accessibili al programmatore. L'interprete è accessibile attraverso un
+read-eval-print loop, dove il programmatore può interattivamente
 aggiungere e rimuovere elementi in un programma. Una volta che il programma
-viene completato,può essere compilato per aumentarne le prestazioni.
+è stato completato, può essere compilato per aumentarne le prestazioni.
 
 Il sistema di battitura in CX è molto rigoroso. L'unico "casting implicito"
-si verifica quando il parser determina cos'è un integer , un float, un valore
+si verifica quando il parser determina cos'è un integer, un float, un valore
 booleano, una stringa o un array. Per esempio, se una funzione richiede un 
-integer da 64 bit, occorre usare una funzione cast per convertirlo nel tipo
-richiesto.
+integer da 64 bit, occorre usare una funzione cast per convertirlo esplicitamente
+nel tipo richiesto.
 
 Infine, un programma CX può essere completamente serializzato su arrays di byte,
 mantenendo il suo stato di esecuzione e la sua struttura. Questa versione 
@@ -69,24 +69,24 @@ sono descritte in maggior dettaglio.
 
 # Archivio del Progetto
 
-Il codice sorgente del progetto può essere scaricato dal suo archivio Github :
+Il codice sorgente del progetto può essere scaricato dal suo archivio su Github :
 [https://github.com/skycoin/cx](https://github.com/skycoin/cx). L'archivio include
-i file di specifica, la documentazione, gli esempi e il codice sorgente stesso.
+il file di specifica, la documentazione, gli esempi e il codice sorgente stesso.
 
 # Sintassi
 
 Come è stato menzionato nell'introduzione, CX è sia un linguaggio di programmazione
-sia una specifica. Le specifiche di CX non impongono una sintassi,
-ma piuttosto strutture e processi che un dialetto CX deve implementare
+sia una specifica. La specifica  CX non impone una sintassi,
+ma piuttosto strutture e processi che il dialetto CX deve implementare
 per essere considerato un CX. Come conseguenza, si potrebbero implementare
-due dialetti CX, uno con una sintassi simile a quella del Lisp e un'altra come
+due dialetti CX, uno con una sintassi simile a quella del Lisp e un altro con
 la sintassi del C. Questo linguaggio sottostante è chiamato CX Base,
 o "il linguaggio di base". In questo documento, un'implementazione è usata
 per mostrare le capacità della specifica, sebbene il suo scopo non è solo
-quello di strumento accademico,ma quello di diventare un linguaggio robusto e
+quello di strumento accademico, ma quello di diventare un linguaggio robusto e
 completo che possa essere utilizzato per scopi generali.
 
-Il CX utilizzato in questo documento ha l'obiettivo generale di avere una sintassi
+Il CX utilizzato in questo documento ha l'obiettivo di avere una sintassi
 il più simile possibile alla sintassi del linguaggio GO.
 
 # Affordances
@@ -95,7 +95,7 @@ Un programmatore deve prendere una serie di decisioni durante la costruzione
 di un programma, per esempio, quanti paramentri una funzione deve ricevere, 
 quanti parametri deve restituire, quali dichiarazioni sono necessarie per
 ottenere la funzionalità desiderata e, inoltre, quali argomenti devono essere
-inviati come parametri per le funzioni di asserzione. Il sistema di affordance
+inviati come parametri alle funzioni di asserzione, tra l'altro. Il sistema di affordance
 in CX può essere interrogato per ottenere una lista delle possibili azioni
 che possono essere applicate a un elemento. In questo contesto, esempi di 
 elementi sono funzioni, strutture, moduli ed espressioni. 
@@ -215,7 +215,7 @@ Anche se un elemento non è stato rinominato, non è facile determinare se un el
 esiste o no. Gli elementi da utilizzare nelle affordances devono essere ricercati nella
 chiamata allo stack's current scope , nel global scope, e in altri moduli global scope.
 
-### Restrizioni di Identificazione
+### Restrizioni di Identificatore
 
 L'aggiunta di nuovi elementi nominati sono azioni comunemente candidate per le affordances.
 Una restrizione che si presenta quando si sta provando ad applicare questo tipo di affordance
@@ -223,7 +223,7 @@ Una restrizione che si presenta quando si sta provando ad applicare questo tipo 
 Il sistema affordance può generare un unico identificatore nell'element scopo, o può chiedere
 al programmatore di fornire un identifier adatto.
 
-### Restrizione dei Confini
+### Restrizione sui Limiti
 
 CX fornisce funzioni native per l'accesso e la modifica di elementi dagli arrays.
 Esempi di un lettore di array e di uno scrittore array sono:
