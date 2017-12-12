@@ -17,7 +17,7 @@ categories = [
 - [Sintassi](#syntax)
 - [Affordances](#affordances)
     - [Restrizioni Arity](#arity-restrictions)
-    - [Restrizioni sui Tipi](#type-restrictions)
+    - [Restrizioni sul Tipo](#type-restrictions)
     - [Restrizioni Esistenziali](#existential-restrictions)
     - [Restrizioni di Identificazione](#identifier-restrictions)
     - [Restrizioni dei Confini](#boundaries-restrictions)
