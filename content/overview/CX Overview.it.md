@@ -28,7 +28,7 @@ categories = [
     - [Comandi di Meta-programmazione](#meta-programming-commands)
     - [Stepping](#stepping)
     - [Debugging Interattivo](#interactive-debugging)
-- [Algoritmi Integrati Evolutivi](#integrated-evolutionary-algorithm)
+- [Algoritmo Evolutivo Integrato](#integrated-evolutionary-algorithm)
 - [Serializzazione](#serialization)
 
 <!-- /MarkdownTOC -->
@@ -488,12 +488,12 @@ More information about CX is available at https://github.com/skycoin/cx
 *
 ```
 
-Il programma *examples/looping.cx* is being run 5 steps at a time. We
-can see that 5 steps are required in order for the program to
-re-evaluate the *while* condition, print the counter, and add 1 to the
-counter.
+Il programma *examples/looping.cx* viene eseguito 5 passi alla volta.
+possiamo vedere che i 5 passaggi sono necessari per il programma per
+rivalutare la condizione *while*, stampare il contatore e aggiungere
+1 al contatore.
 
-Likewise, we should "go back in time" if the REPL is instructed to
+Allo stesso modo, dovremmo andare "indietro nel tempo" se il REPL è istruito al
 `:step -5`.
 
 ```
@@ -509,21 +509,21 @@ Likewise, we should "go back in time" if the REPL is instructed to
 
 *
 ```
+ 
+Dopo aver introdotto CX di avanzare di nuovo di 5 step, il secondo
+viene stampato di nuovo sulla console. Da notare che non viene assegnato
+un valore diverso al contatore. Quello che sta succedendo è che la chiamata
+allo stack viene ripristinata allo stato precedente.
 
-After instructing CX to advance 5 steps again, the 2 is printed again
-to the console. It must be noted that the counter is not just being
-assigned with a different value. What is happening is that the call
-stack is being reverted to a previous state.
+### Debugging Interattivo
 
-### Interactive Debugging
+Un programma CX entrerà in modalità REPL una volta che è stato
+trovato un errore. Questo comportamento da al programmatore la possibilità
+di mettere a punto il programma prima di tentare di riprendere la sua esecuzione.
 
-A CX program will enter the REPL mode once an error has been
-found. This behaviour gives the programmer the opportunity to debug
-the program before attempting to resume its execution.
-
-In the example below, a division by 0 error is raised, the REPL alerts
-the programmer about the error, the last call in the call stack is
-dumped, and the REPL continues its execution.
+Nell'esempio sotto, viene generato un errore di divisione per 0, il REPL avverte
+il programmatore dell'errore, l'ultima chiamata alla chiamata allo stack è
+dumpata, e il REPL continua la sua esecuzione.
 
 
 ```
@@ -561,10 +561,10 @@ main
 	*
 ```
 
-Likewise, if a program is given as input to the CX interpreter,
-without calling the REPL, but an error is raised, the REPL will be
-called for the programmer or system administrator to debug the
-program:
+Allo stesso modo, se un programma viene dato come input all'interprete CX,
+senza chiamare il REPL, ma viene generato un errore, il REPL sarà 
+chiamato per il programmatore o l'amministratore di sistema per eseguire
+il debug del programma:
 
 ```
 $ ./cx examples/program-halt.cx
@@ -585,48 +585,46 @@ More information about CX is available at https://github.com/skycoin/cx
 *
 ```
 
-# Integrated Evolutionary Algorithm
+# Algoritmo Evolutivo Integrato
 
-The affordance system and meta-programming functions in CX allow the
-flexibility of changing the program's structure in a supervised
-manner. However, affordances can still be automated by having a
-function that selects the index of the affordance to be applied.
+il sistema affordance e le funzioni di meta-programmazione in CX permettono
+la flessibilità di cambiare la struttura del programma in modo controllato.
+Comunque, l'affordances può ancora essere automatizzata con una funzione che
+seleziona l'indice dell'affordance da appliare.
 
-`evolve` is a native function that constructs user-defined functions
-by using random affordances. An iterative process is used to test
+`evolve` è una funzione nativa che costruisce funzioni definite dall'utente
+utilizzando affordances casuali. un processo interattivo è usato per testare
 
-`evolve` follows the principles of evolutionary computation. In
-particular, evolve performs a technique called genetic
-programming. Genetic programming tries to find a combination of
-operators and arguments that will solve a problem. For example, you
-could instruct `evolve` to find a combination of operators that, when
-sent 10 as an argument, returns 20. This might sound trivial, but
-genetic programming and other evolutionary algorithms can solve very
-complicated problems.
+`evolve` segue i principi della computazione evolutiva. In particolare, 
+evolve esegue una tecnica chiamata programmazione genetica.
+La programmazione genetica cerca di trovare una combinazione di operatori
+e argomenti che risolverà un problema. Per esempio, potresti istruire `evolve` 
+di trovare una combinazione di operatori, quando inviato 10 come argomento, 
+restituisce 20. Ciò può sembrare banale, ma la programmazione genetica e altri
+algoritmi evolutivi possono risolvere problemi molto complicati.
 
-In the *examples* directory from the repository, one can find an
-example (*examples/evolving-a-function.cx*) that describes the process for
-evolving a
-[curve-fitting](https://en.wikipedia.org/wiki/Curve_fitting) function.
+nella directory *examples* dell'archivio è possbili trovare un esempio
+(*examples/evolving-a-function.cx*) che descriva il processo per l'evolvere di una
+funzione di [curve-fitting](https://en.wikipedia.org/wiki/Curve_fitting).
 
-# Serialization
+# Serializzazione
 
-A program in CX can be partially or fully serialized to a byte
-array. This serialization capability allows a program to create a
-program image (similar to
-[system images](#https://en.wikipedia.org/wiki/System_image)), where
-the exact state at which the program was serialized is
-maintained. This means that a serialized program can be deserialized,
-and resume its execution later on. Serialiation can also be used to
-create backups.
+Un programma in CX può essere completamente o parzialmente serializzato a un array di
+byte. questa capacità di serializzazione consente al programma di creare un immagine
+di programma (simile a
+[L'immagine di sistema](#https://en.wikipedia.org/wiki/System_image)), dove
+viene mantenuto lo stato esatto in cui  è stato serializzato il programma. 
+Ciò significa che un programma serializzatopuò essere deserializzato e riprendere
+la sua esecuzione in seguito. La serializzazione può anche essere usata per creare
+backups.
 
-A CX program can leverage its integrated features to create some
-interesting scenarios. For example, a program can be serialized to
-create a backup of itself, and start an
-[evolutionary algorithm](#integrated-evolutionary-algorithm) on one of
-its functions. If the evolutionary algorithm finds a function that
-performs better than the previous definition, one can keep this new
-version of the program. However, if the evolutionary algorithm
-performed badly, the program can be restored to the saved backup. All
-of these tasks can be automated.
+Un programma CX può fare leva sulle sue funzionalità per creare alcuni
+scenari interessanti. Per esempio, un programma può essere serializzato
+per creare un backup di se stesso, e iniziare un
+[algoritmo Evolutivo](#integrated-evolutionary-algorithm) su una
+delle sue funzioni. Se l'algoritmo evolutivo trova una funzione che si 
+comporta meglio della definizione precedente, si può mantenere questa
+nuova versione del programma. Comunque, se l'algoritmo evolutivo si 
+comporta male, il programma può essere ripristinato dal backup salvato. 
+Tutte queste attività possono essere automatizzate.
 
