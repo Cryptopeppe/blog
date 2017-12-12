@@ -13,148 +13,148 @@ categories = [
 author = "johnstuartmill"
 +++
 
-![Obelisk The Skycoin Consensus Algorithm](/img/obelisk-the-skycoin-consensus-algorithm.png)
+![Obelisk L'algoritmo di Consenso di Skycoin](/img/obelisk-the-skycoin-consensus-algorithm.png)
 
 <!-- MarkdownTOC autolink="true" bracket="round" -->
 
-- [Consensus highlights](#consensus-highlights)
-    - [Why consensus](#why-consensus)
-    - [High scalability and low-energy consumption](#high-scalability-and-low-energy-consumption)
-    - [Robust to coordinated attacks](#robust-to-coordinated-attacks)
-    - [The “51-percent Attack”](#the-%E2%80%9C51-percent-attack%E2%80%9D)
-    - [Hidden IP addresses](#hidden-ip-addresses)
-    - [Independence of clock synchronization](#independence-of-clock-synchronization)
-    - [Two type of nodes: Consensus and Block-making](#two-type-of-nodes-consensus-and-block-making)
-- [How Skycoin Consensus Algorithm works](#how-skycoin-consensus-algorithm-works)
-- [References](#references)
+- [Punti Salienti del Consenso](#consensus-highlights)
+    - [Perchè Consenso](#why-consensus)
+    - [Elevata Scalabilità e Basso Consumo Energetico](#high-scalability-and-low-energy-consumption)
+    - [Robusto ad Attacchi Coordinati](#robust-to-coordinated-attacks)
+    - ["L'Attacco del 51 Percento”](#the-%E2%80%9C51-percent-attack%E2%80%9D)
+    - [Indirizzi IP Nascosti](#hidden-ip-addresses)
+    - [Indipendenza dalla Sincronizzazione d'Orologio](#independence-of-clock-synchronization)
+    - [Due Tipi di Nodi: Consenso e Block-making](#two-type-of-nodes-consensus-and-block-making)
+- [Come Funziona l'Algoritmo di Consenso Skycoin](#how-skycoin-consensus-algorithm-works)
+- [Referenze](#references)
 
 <!-- /MarkdownTOC -->
 
 
-## Consensus highlights
+## Punti Salienti del Consenso
 
-### Why consensus
+### Perchè Consenso
 
-Skycoin Consensus Algorithm ("Obelisk") synchronizes the state of Skycoin
-blockchain across all the network nodes. This results in consistent accounting,
-i.e. when calculating coin balance for a given public key (or address)
-yields same value at each node that performed the calculation.
+L'algoritmo di consenso skycoin ("Obelisk") sincronizza lo stato della blockchain Skycoin
+attraverso tutti i nodi della rete. Ciò risulta in una contabilità coerente,
+es: quando si calcola il saldo per una data chiave pubblica (o indirizzo)
+si ottiene lo stesso valore su ciascun nodo che ha eseguito il calcolo.
 
-### High scalability and low-energy consumption
+### Elevata Scalabilità e Basso Consumo Energetico
 
-By design, the algorithm is a scalable and computationally-inexpensive
-alternative to proof-of-work, therefore both the consensus algorithm and
-block-making can be run on a budget hardware that have low price and low
-energy consumption, thus making the cryptocurrency network more robust
-to possible centralization attempts (i.e. via node being affordable to
-general public).
+Di design, l'algoritmo è scalabile e computazionalmente economico, alternativo
+al proof-of-work, di conseguenza sia l'algoritmo di consenso sia 
+il block-making possono essere eseguiti su hardware poco costoso con basso 
+consumo energetico, rendendo così la rete della cryptovaluta più robusta
+ai tentativi di centralizzazione (es: via nodo essendo accessibile
+al grande pubblico).
 
-### Robust to coordinated attacks
+### Robusto ad Attacchi Coordinati
 
-Our Consensus Algorithm (i) converges fast, (ii) requires minimal
-network traffic, and (iii) can withstand a large-scale coordinated
-attack by a well-organized network of malicious nodes. The algorithm is
-non-iterative, fast, can be run on a sparse network with only
-nearest-neighbor connectivity (e.g. on Mesh Network), and works well in
-the presence of cycles in the connectivity graph (i.e. DAG-type
-connectivity is *not* required).
+il nostro algoritmo di consenso (i) copertura veloce, (ii)richiede un
+traffico di rete minimo, e (iii) può resistere a un attacco coordinato
+su grande scala da parte di una rete ben organizzata di nodi malevoli. 
+L'algoritmo è non iterativo, veloce, può essere eseguito su una rete
+sparsa con solo la connettività più vicina (es: sulla Mesh Network), e 
+funziona bene in presenza di cicli nel grafico di connettività (es:connettività
+DAG-type is *not* required).
 
-### The “51-percent Attack”
+### “Attacco del 51 Percento”
 
-In a limited sense, the base version of the Algorithm can be subject to
-this attack. Specifically, when the modified or malicious nodes who are
-in majority broadcast a protocol-compliant and UTXO-compliant candidate
-block, such block wins the consensus. However, a block with any sort of
-non-compliance is dropped by the (unmodified) Algorithm before the block
-gets a chance to participate in consensus trial.
+In senso limitato, la versione base dell'algoritmo può essere soggetta
+a questo attacco. Specificamente, quando i nodi modificati o malevoli 
+trasmettono la maggiorparte un blocco candidato conforme al protocollo
+e conforme UTXO, tale blocco vince il consenso. Comunque, con qualsiasi tipo
+di inadempienza viene lasciato dall'algoritmo (immodificato) prima che il 
+blocco abbia la possibilità di partecipare al processo di consenso.
 
-Consensus nodes can optionally utilize a Web-of-Trust concept in such a
-way that consensus-related messages that come from unknown nodes (i.e.
-signed by untrusted public keys) are ignored.
+I nodi di consenso possono opzionalmente utilizare un concetto di Web-of-Trust così
+che i messaggi relativi al consenso che vengono da nodi sconosciuti (es:
+firmati da una chiave pubblica non attendibile) sono ignorati.
 
-When Web-of-Trust mode is enabled, starting a very large number of
-malicious consensus nodes in order to (a) cause blockchain fork or (b)
-disrupt the consensus process would have little effect, unless a vast
-majority of Web-of-Trust members unwittingly include those malicious
-nodes into their local lists of trusted nodes.
+Quando la modalità Web-of-Trust è abilitata, avviare un elevato numero
+di nodi di consenso malevoli per (a) causare un fork della blockchain o (b)
+disgregare il processo di consenso dovrebbe avere un effetto piccolo, salvo che 
+una vasta maggioranza di membri Web-of-Trust involontariamente includa qui nodi
+malevoli nella loro lista locale di nodi fidati.
 
-### Hidden IP addresses
+### Indirizzi IP Nascosti
 
-The nodes are addressed by their cryptographic public key. Node’s IP
-address is only known to the nodes to which it is connected directly.
+I nodi sono indirizziati dalla loro chiave pubblica crittografica. L'indirizzo
+IP dei nodi è conosciuto solo ai nodi al quale si è collegati direttamente.
 
-### Independence of clock synchronization
+### Indipendenza dalla Sincronizzazione d'Orologio
 
-The Algorithm does not use “wall clock” (i.e. calendar date/time).
-Instead, block sequence numbers that are extracted from validated
-consensus- and blockchain- related messages are used to calculate node’s
-internal time. This can be informally called “block clock”.
+L'algoritmo non utilizza un “orologio a muro” (es: data del calendatio/tempo).
+Invece, numeri di sequenza di blocco che vengono estratti da un consenso
+convalidato da messaggi correalti - e blockchain- sono usati per calcolare
+il tempo interno del nodo. Ciò può essere informalmente chiamato “block clock”.
 
-### Two type of nodes: Consensus and Block-making
+### Due Tipi di Nodi: Consenso e Block-making
 
-A consensus node receives its input from one or more block-making nodes.
-The algorithms for consensus and block-making are separate, yet they
-both operate on same data-structures. We mention block-making where it
-helps understanding the Consensus Algorithm and how it integrates with
-the rest of the system.
+Un nodo di consenso riceve il suo input da uno o più nodi block-making.
+Gli algoritmi per il consenso e il block-making sono separati, tuttavia
+essi operano sulla stessa struttura dati. Parliamo di block-making dove
+aiuta a capire l'algoritmo di consenso e come esso interagisce con il 
+resto del sistema.
 
-Both type of nodes always performs authorship verification and fraud
-detection of incoming date. Fraudulent or invalid messages are detected,
-dropped and never propagated; peer nodes engaged in suspicious
-activities are disconnected from, and their public keys are banned.
+Entrambi i tipi di nodi compiono sempre la verifica di paternità e il 
+rilevamento di frodi della data in arrivo. Messaggi fraudolenti o invalidi 
+vengono rilevati, lasciati cadere e mai propagati; nodi impegnati in atività
+sospette sono disconnessi, e le loro chiavi pubbliche bandite.
 
-## How Skycoin Consensus Algorithm works
+## Come Funziona l'Algoritmo di Consenso Skycoin
 
-For exposition purposes only, the following description assumes that (i)
-each node is both block-maker and consensus participant, and (ii)
-consensus-related messages generated by non-trusted nodes are accepted,
-i.e. no filtering based on web-of-trust is performed. A full
-implementation (i.e. without these simplifying assumptions) will be
-available in Skycoin GitHub repository. For simulation results and a
-detailed, diagrammatic example of one consensus trial, see [\[1\]](#references). A
-simulation of a network with trust relationship, although using a
-different than Skycoin algorithm, can be found in [\[2\]](#references). The
-description of Skycoin Consensus Algorithm follows.
+Solo a scopo di esposizione, la descrizione seguente presuppone che (i)
+ogni nodo è sia block-maker sia partecipante al processo di consenso, e (ii)
+ sono accettati i messaggi di consenso generati da nodi non attendibili,
+es: nessun filtro basato sul web-of-trust viene eseguito. una 
+implementazione completa (senza queste ipotesi semplificative) sarà
+disponibile sull'archivio di Skycoin su Github. Per risultati di simulazione e un
+dettagliato, esempio schematico sul processo di conenso, vedere [\[1\]](#references). 
+una simulazione di una rete con relazione di fiducia, sebbene usi un
+algoritmo diverso da quello di Skycoin, può essere trovato in [\[2\]](#references). 
+Segue la descrizione dell'algoritmo di consenso di Skycoin.
 
-1.  *Block-making*. Each block-making node collects new
-    transactions, verifies them against the UTXO of the desired sequence
-    number, packages the compliant transactions into a new block, and
-    broadcasts the block to the network.
+1.  *Block-making*. ogni nodo block-making colleziona nuove
+    transazioni, le verifica contro il UTXO del numero in sequenza
+    desiderato, impacchetta le transazioni conformi in un nuovo blocco, e
+    trasmette il blocco alla rete.
 
-2.  *Collecting blocks*. Each consensus node collects the
-    blocks generated by block-makers, and puts them into a container
-    (separate from blockchain) keyed by block’s sequence number.
+2.  *Collecting blocks*. Ogni nodo di consenso colleziona i
+    blocchi generati dai block-makers, e li mette in un container
+    (separato dalla blockchain) etichettato dalla sequenza numerica del blocco.
 
-3.  *Selecting winning block*. Each consensus node, upon
-    receiving a sufficiently large number[^1] of candidate blocks or
-    upon meeting other criteria, finds the block that was made by the
-    largest number of block-makers. Ties are resolved deterministically.
-    Such block is labeled “local winner”[^2] and is appended to the
-    local blockchain. The key-value pair corresponding to the block
-    sequence number of the local winner is deleted, thus
-    reclaiming storage. Hash code of local winner
-    is broadcast/announced.
+3.  *Selecting winning block*. Ogni nodo di consenso, dopo
+    aver ricevuto un numero sufficiente di blocchi candidati [^1] o
+    dopo aver soddisfatto altri criteri, trova il blocco creato dal
+    maggior numero di block-makers. I legami vengono risolti deterministicamente.
+    Tale blocco è etichettato “local winner”[^2] e viene aggiunto alla 
+    blockchain locale. la coppia chiave-valore corrispondente al numero di 
+    sequenza del blocco del vincitore locale viene eliminato, risparmiando
+    così spazio. Il codice hash del vincitore locale
+    è trasmesso/annunciato.
 
-4.  *Verification step*. Each node keep statistics on local
-    winners reported by other nodes. When local winners have been
-    reported by all or most of the nodes[^3], the node determines the
-    global winner for the particular sequence number. If the global
-    winner is the local winner, then the node continues to function
-    as above. Otherwise the nodes decides, based on external data and
-    local logs, between (a) re-synchronizing itself with the network
-    or (b) dropping from participating in consensus and/or block-making
-    or (c) keeping its blockchain and requesting an emergency stop.
+4.  *Verification step*. Ogni nodo mantiene statistiche sui vincitori
+    locali riportati da altri nodi. Quando i vincitori locali sono stati
+    riportati da tutti o la maggior parte dei nodi [^3], il nodo determina il
+    vincitore globale per il numero di sequenza particolare. se il vincitore
+    globale è il vincitore locale, allora il nodo continua a funzionare
+    come sopra. Altrimenti i nodi decidono, basandosi su dati esterni e
+    logs locali, tra (a) risincronizzarsi con la rete o 
+     (b) abbondonare la partecipazione al consenso e/o block-making
+    e (c) mantenere la sua blockchain e richiedere una fermata di emergenza.
 
-[^1]: This is a configurable parameter of in the Algorithm.
-[^2]: Under certain ideal conditions, local winners (for a given block
-    sequence number) are all the same, i.e. include identical set of
-    transactions. The difference arises due to network latency, high
-    frequency of transactions, out-of-sequence message delivery, message
-    loss, malfunctioning or malicious nodes etc.
-[^3]: This number can be determined, for example, by asking trusted
-    nodes to report public keys of their trusted nodes, recursively.
+[^1]: Questo è un parametro configurabile nell'algoritmo.
+[^2]: Sotto determinate condizioni ideali, i vincitori locali (per una dato 
+    numero di sequenza del blocco) sono tutti uguali, es: includere un insieme identico
+    di transazioni. la differenza è dovuta alla latenza di rete, alta
+    frequenza di transazioni, consegna del messaggio fuori sequenza, perdita del
+    messaggio, malfunzionamento o nodi malevoli etc.
+[^3]: Questo numero può essere determinato, per esempio, chiedendo ai nodi
+      di fiducia di riferire le chiavi private dei loro nodi di fiducia, ricorsivamente.
 
-## References
+## Reference
 
 \[1\] johnstuartmill et al. A Distributed Consensus Algorithm for
 Cryptocurrency Networks.
