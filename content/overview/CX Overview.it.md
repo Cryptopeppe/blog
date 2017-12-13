@@ -110,7 +110,7 @@ di seguito.
 
 Le espressioni in CX possono restituire differenti valori. Ciò crea una sfida
 per il sistema affordance, siccome il numero di variabili che ricevono gli argomenti
-di output di un'espressione devono corrispondere al numero di outputs definiti dall'
+in output di un'espressione devono corrispondere al numero di outputs definiti dall'
 operatore dell'espressione.
 
 ```
@@ -122,25 +122,25 @@ Questo problema può diventare ancora più difficile se consideriamo
 che la definizione di *op* può essere cambiata dal sistema affordance stesso
 o dall'utente in futuro: Non appena la definizione di *op* cambia, possono 
 essere applicate nuove affordances a qualsiasi espressione che usi *op* come suo
-operatore, perchè il numero di variabili ricevute come argomento output di *op*,
+operatore, perchè il numero di variabili che ricevono argomenti output di *op*,
 sono adesso non in corrispondenza.
 
 La logica precedente implica, inoltre, che se il numero delle variabili in ricezione
 corrisponde al numero di parametri in output dell'espressione dell'operatore, l'azione
-di aggiungere nuove variabili in ricezione non può essere eseguita.
+di aggiungere nuove variabili in ricezione non può essere più eseguita.
 
-Le restrizioni Arity si applicano anche agli argomenti di input nelle espressioni, 
-ad esempio,se la chiamata a una funzione ha già tutti gli argomenti in input 
+Le restrizioni Arity si applicano anche agli argomenti in input nelle espressioni, 
+ad esempio, se la chiamata a una funzione ha già tutti i suoi argomenti in input 
 definiti, allora il sistema di affordance non dovrebbe aggiungere un altro 
 argomento come possibile azione. Similmente, se un'espressione sta cercando di 
 chiamare un operatore con meno argomenti del necessario, il sitema di affordance,
-quando richiesto, dovrebbe dire al programmatore che è possibile aggiungere un 
+quando interrogato, dovrebbe dire al programmatore che è possibile aggiungere un 
 nuovo argomento alla funzione.
 
 **Esempio:**
 
 *Nota: La concatenazione di stringhe non è ancora stata implementata. Inoltre,
-la funzione print allega sempre una nuova riga alla fine della stringa stampata.
+le funzioni print allegano sempre una nuova riga alla fine della stringa stampata.
 Una versione futura del'implementazione CX presentata in questo documento affronterà
 questi problemi.*
 
@@ -161,7 +161,8 @@ func main () () {
 ```
 
 Nell'esempio precedente, manca un argomento  nella chiamata a *advance* nella funzione *main*.
-Se si interroga il sistema affordance, il sistema dovrebbe adottare, tra le altre cose, un'azione simile a:
+Se si interroga il sistema affordance, 
+il sistema dovrebbe adottare, tra le altre cose, un'azione simile a:
 
 ```
 ...
@@ -172,7 +173,7 @@ Se si interroga il sistema affordance, il sistema dovrebbe adottare, tra le altr
 
 dove k rappresenta un indice arbitrario. Come si può vedere, il sistema affordance
 sta dicendo al programmatore che due delle possibili azioni possono aggiungere un
-altro argomento alla funzione avanzata, e la definizione globale *age* e *steps* 
+altro argomento alla funzione advance, e la definizione globale *age* e *steps* 
 sono fra le opzioni che agiscono come argomenti.
 
 E' interessante mezionare che le affordances dovebbero essere sempre enumerate, 
@@ -183,31 +184,33 @@ quale affordance deve essere applicata dopo aver esaminato il risultato della qu
 ### Restrizioni sui Tipi
 
 Il comportamento comune nei linguaggi di programmazione è avere un sistema di 
-battitura che limitia il programmatore dall'inviare argomenti di tipi inaspettati
-alle funzioni chiamate.Anche nei linguaggi di programmazione debolemente tipizzati,
+typing che limitia il programmatore dall'inviare argomenti di tipi inaspettati
+alle funzioni chiamate. Anche nei linguaggi di programmazione debolemente tipizzati,
 un'operazione come `true / "hello world"` dovrebbe generare un errore
 (tranne nel caso dei
 [linguaggi esoterici](https://en.wikipedia.org/wiki/Esoteric_programming_language),
 certamente). CX segue un vero
-[sistema di battitura rigoroso](#strict-typing-system), e argomenti che non sono
+[sistema di typing rigoroso](#strict-typing-system), e argomenti che non sono
 esattamente il tipo atteso non dovrebbero essere considerati come candidati
 per le azioni affordances (sebbene una soluzione temporanea sia quella di 
 avvolgere questi argomenti in funzioni cast prima di essere mostrate come affordances).
 
-Le restrizioni sui tipi devono essere considerate quando si sta assegnando
+Le restrizioni sui tipi devono essere considerate anche quando si sta assegnando
 un nuovo valore a una variabile già esistente. In CX, una variabile dichiarata
-a un certo tipo deve rimanere di quel tipo durante tutta la sua durata. Quindi, 
-una varibile dichiarata di 32 bit interi non dovrebbe essere considerata come
-candidata per ricevere come output un argomento float da 64 bit, per esempio.
+di un certo tipo deve rimanere di quel tipo durante tutta la sua durata (a meno che
+non viene rimossa utilizzando comandi/funzioni di meta-programmazione e ne venga 
+creata una nuova). Quindi, una varibile dichiarata di 32 bit interi non dovrebbe 
+essere considerata come candidata per ricevere come output un argomento float da 64 bit,
+per esempio.
 
 ### Restrizioni Esitenziali
 
 Questo tipo di restrizione può sembrare irrilevante a prima vista: se un elemento
-non esiste, un affordance che lo coinvolge non dovrebbe nemmeno esistere. 
+non esiste, un affordance che lo coinvolge non dovrebbe esistere nemmeno. 
 ciò nonostante, questa restrizione diventa una sfida una volta che consideriamo
-una situazione dove una funzione è stata rinominata, ed è già stato usato come
-operatore in un'espressione durante un programma. Se il programma è nel suo modulo codice sorgente,
-questo problema viene ridotto a un semplice processo "cerca & sostituisci", 
+una situazione dove una funzione è stata rinominata, ed è già stata usata come
+operatore in un'espressione durante un programma. Se il programma è nella sua forma
+modulo codice sorgente, questo problema viene ridotto a un semplice processo "cerca & sostituisci", 
 ma se è durante il processo di esecuzione, il sistema di affordance diventa davvero utile: 
 un affordance per cambiare l'identificatore legato a questo operatore.
 
@@ -217,11 +220,11 @@ chiamata allo stack's current scope , nel global scope, e in altri moduli global
 
 ### Restrizioni di Identificatore
 
-L'aggiunta di nuovi elementi nominati sono azioni comunemente candidate per le affordances.
+L'aggiunta di nuovi elementi nominati sono azioni comunemente candidate per l'affordances.
 Una restrizione che si presenta quando si sta provando ad applicare questo tipo di affordance
 è quello di garantire un unico identificatore per il nuovo elemento per evitare ridefinizioni.
 Il sistema affordance può generare un unico identificatore nell'element scopo, o può chiedere
-al programmatore di fornire un identifier adatto.
+al programmatore di fornire un identifiecatore adatto.
 
 ### Restrizione sui Limiti
 
@@ -242,8 +245,8 @@ indice che eccede la lungezza dell'array, viene generato un errore "fuori dai li
 
 Obbedendo solo alla restrizione sui tipi, il sistema affordance dirà
 al programmatore che qualsiasi integer a 32 bit come argomento può essere usato
-come un indice per accedere a qualsiasi array. Sebbene questi programmi possano essere
-compilati, errori di confine sono molto probabili se il programmatore non presta
+come un indice per accedere a qualsiasi array. Sebbene questi programmi dovrebbero
+compilare, sono molto probabili errori di limite se il programmatore non presta
 attenzione extra su ciò che viene scelto per essere applicato.
 
 Il sistema affordance ha bisogno di filtrare le affordances secondo 
@@ -258,7 +261,7 @@ nella sua fase sperimentale.*
 Le restrizioni di base sopra descritte dovrebbero almeno garantire
 che il programma non incontri nessun errore di runtime. Queste restrizioni
 dovrebbero bastare per costruire alcuni sistemi interessanti, come
-[l'algoritmo evoluzionistico](#integrated-evolutionary-algorithm) nativo di CX. 
+[l'algoritmo evolutivo](#integrated-evolutionary-algorithm) nativo di CX. 
 Tuttavia, in alcune situzioni è richiesto un sistema più robusto. Per questo scopo,
 clausole, queries e oggetti sono usati per descrivere l'ambiente del modulo. 
 Questi elementi sono definiti usando un interprete Prolog integrato, 
@@ -266,7 +269,7 @@ e le funzioni native di CX *setClauses*, *setQuery*, e *addObject*.
 
 La descrizionepiù generale di questo sistema di restrizione è che
 il programmatore definisce una serie di clausole Prolog (fatti e regole), 
-che saranno interrogate usando una query prolog definita, per ogniuno 
+che saranno interrogate usando una query prolog definita, per ognuno 
 degli oggetti aggiunti. Ciò non avrà alcun senso per chiunque lo legga per la 
 prima volta. Un esempio dovrebbe chiarire i concetti e il processo un po di più:
 
@@ -276,10 +279,10 @@ setClauses("move(robot, north, X, R) :- X = northWall, R = false.")
 setQuery("move(robot, %s, %s, R).")
 ```
 
-In questo esempio, è definita solamente una regola. a regola può essere
+In questo esempio, è definita solamente una regola. La regola può essere
 grossolanamente interpretata come "se il robot vuole muoversi verso nord, 
-chiedi cos'è X. se X è northWall, quindi non può muoversi". La query è solo
-una stringa di formato che fungerà come query per l'azione *move*, e per 
+chiedi cos'è X. se X è northWall, non può muoversi". La query è solo
+un formato stringa che fungerà come query per l'azione *move*, e per 
 l'elemento *robot* che riceverà altri due argomenti: una direzione e un oggetto.
 
 Gli oggetti possono essere definiti usando la funzione *addObject*:
