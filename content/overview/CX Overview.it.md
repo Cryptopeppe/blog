@@ -294,7 +294,7 @@ addObject("northWall")
 
 Il sistema di restrizione interrogherà il sitema per ogni oggetto presente 
 nel modulo. In questo esempio, il sistema performerà prima la query "move(robot, north, southWall)," 
-e il sistema risponderà "nil," il quale significa che non vi è alcuna regola definita
+e il sistema risponderà "nil," che significa che non vi è alcuna regola definita
 per gestire tale situazione, e che l'azione predefinita non è quella di scartare 
 l'affordance. La seconda query sarà "move(robot, north, northWall),"
 e il sistema risponderà "false." In questo caso, l'affordance non ha superato il test 
@@ -320,7 +320,7 @@ attraverso il muro usando il wormhole.
 
 # Sistema di Battitura Rigoroso
 
-Come menzionato nell'introduzione, non esiste un cast implicito in
+Come menzionato nell'introduzione, non esiste un casting implicito in
 CX. A causa di ciò, sono definite più versioni di ogni tipo primitivo
 nel modulo principale. Per esempio, esistono quattro funzioni 
 native aggiunte: addI32, addI64, addF32, e addF64.
@@ -334,15 +334,15 @@ racchiusi tra virgolette sono sempre stringhe; e l'array ha bisogno di
 indicare il suo tipo prima dell'elenco dei suoi elementi, esempio, `[]i64{1, 2,
 3}`.
 
-Per i casi in cui il programmatore ha bisogno di esprimere esplicitamente 
-di cast un valore di un tipo a un'altro, il modulo principale fornisce un 
+Per i casi in cui il programmatore ha bisogno di esplicitare
+cast di valore di un tipo a un'altro, il modulo principale fornisce un 
 numero di funzioni cast che lavorano con tipi primitivi. Per esempio, `byteAToStr`
 casts un byte array a una stringa, e `i32ToF32` casts un integer a 32 bit
 a un float a 32 bit.
 
 # Compilato e Interpretato
 
-La specifica CX rafforza un dialetto CX per fornire allo sviluppatore
+La specifica CX applica un dialetto CX per fornire allo sviluppatore
 sia un interprete sia un compilatore. Un programma interpretato è molto 
 più lento della sua controparte compilata, come previsto, ma permetterà
 un programma maggiormente flessibile. Questa flessibilità deriva dalle
@@ -438,8 +438,8 @@ viene modificata.
 scopi di debugging, stampando la struttura del programma, rispettivamente
 lo stato correntemente chiamato e lo stack completo chiamato dall'utente. 
 `:step` istruisce l'interprete ad andare avanti o indietreggiare
-nella sua esecuzione. `:package`, `:func`, e `:struct`, conosciuto
-come *selectors*, viene usato per cambiare lo scope del programma. `:rem`
+nella sua esecuzione. `:package`, `:func`, e `:struct`, sono conosciuti
+come *selectors*, che viene usato per cambiare lo scope del programma. `:rem`
 da al programmatore l'accesso a *removers*, che può essere usato per 
 rimuovere selettivamente elementi dalla struttura di un programma.
 `:aff` è usato per accedere al sistema affordance di CX;
