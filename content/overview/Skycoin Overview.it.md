@@ -58,11 +58,11 @@ target. I nodi aggiungono transazioni a un nuovo blocco e
 randomicamente provano finché un hash valido per un 
 blocco viene scoperto.
 
-A function is used to create a total ordering
-of chains in the block tree. The chain which has the
-highest difficulty and required the most hashing
-operations to produce is “the longest chain” and
-forms the consensus chain. The notion of “block
+Viene usata una funzione per creare un ordine totale
+di chains nell'albero del blocco. la chain con la piú
+alta difficoltá e richiesto la maggior quantitá di hash
+operations per produrre “la chain piú lunga” e    (RIFARE TUTTA QUESTA PARTE)
+forma la chain consenso. The notion of “block
 depth” and “difficulty” create a total ordering over
 all linear chains in the block tree and only the most
 resource intensive chain is accepted to produce the
