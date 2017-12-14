@@ -51,12 +51,12 @@ modo che ogni nodo nella rete sia d'accordo su quale delle
 chains prospettate nell'albero é la blockchain
 di consenso.
 
-Bitcoin uses a technique called Proof‐of‐Work
-(PoW) to determine a unique blockchain. A valid
-block requires a hash value, which is below a target
-value. Nodes add transactions to a new block and
-randomly try nonces until a valid hash for a block
-is found.
+Bitcoin usa una tecnica chiamata Proof‐of‐Work
+(PoW) per determinare una blockchain unica. Un blocco
+valido richiede un valore hash, al di sotto di un valore
+target. I nodi aggiungono transazioni a un nuovo blocco e
+randomicamente provano finché un hash valido per un 
+blocco viene scoperto.
 
 A function is used to create a total ordering
 of chains in the block tree. The chain which has the
