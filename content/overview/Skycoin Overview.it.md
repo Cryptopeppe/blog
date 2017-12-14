@@ -41,7 +41,7 @@ specifiche.
 
 # Innovazioni e Difetti del Bitcoin e gli Attuali Protocolli Blockchain
 
-In Bitcoin, le nuove transazione vengono collocate
+In Bitcoin, le nuove transazioni vengono collocate
 in un blocco, aggiunto alla blockchain. Qualsiasi
 peer nella rete Bitcoin puó creare nuovi blocchi.
 Pertanto ogni blocco ha un solo genitore ma uno o piú
