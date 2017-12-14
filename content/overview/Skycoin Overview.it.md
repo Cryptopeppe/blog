@@ -12,20 +12,20 @@ categories = [
 
 <!-- MarkdownTOC autolink="true" bracket="round" depth="1" -->
 
-- [Skycoin Introduction](#skycoin-introduction)
-- [Innovations And Flaws With Bitcoin And The Current Blockchain Protocols](#innovations-and-flaws-with-bitcoin-and-the-current-blockchain-protocols)
-- [Innovations Produced By Bitcoin](#innovations-produced-by-bitcoin)
-- [Major Flaws Of Bitcoin](#major-flaws-of-bitcoin)
-- [Desirable Properties For Systems Of Distributed Consensus For Financial Ledgers](#desirable-properties-for-systems-of-distributed-consensus-for-financial-ledgers)
-- [Skycoin Security Philosophy](#skycoin-security-philosophy)
-- [Transparency And Security: Obelisk And Public Broadcast Channels](#transparency-and-security-obelisk-and-public-broadcast-channels)
+- [Introduzione a Skycoin](#skycoin-introduction)
+- [Innovazioni e Difetti del Bitcoin e gli attuali protocolli Blockchain](#innovations-and-flaws-with-bitcoin-and-the-current-blockchain-protocols)
+- [Innovazioni Prodotte dal Bitcoin](#innovations-produced-by-bitcoin)
+- [Maggiori Difetti del Bitcoin](#major-flaws-of-bitcoin)
+- [Proprietá Desiderabili per Sistemi di Consenso Distribuito per Registri Finanziari](#desirable-properties-for-systems-of-distributed-consensus-for-financial-ledgers)
+- [La Filosofia di Sicurezza di Skycoin](#skycoin-security-philosophy)
+- [Trasparenza e Sicurezza: Obelisk e Canali di Trasmissione Pubblici](#transparency-and-security-obelisk-and-public-broadcast-channels)
 - [Obelisk](#obelisk)
-- [Simple Binary Consensus Algorithm: Choosing Between Two Blocks](#simple-binary-consensus-algorithm-choosing-between-two-blocks)
-- [Consensus On Multiple Concurrent Branch Choices](#consensus-on-multiple-concurrent-branch-choices)
+- [Semplice Algoritmo di Consenso Binario: Scegliere tra Due Blocchi](#simple-binary-consensus-algorithm-choosing-between-two-blocks)
+- [Consenso su Scelte Multiple Concomitanti Diramate](#consensus-on-multiple-concurrent-branch-choices)
 
 <!-- /MarkdownTOC -->
 
-# Skycoin Introduction
+# Introduzione a Skycoin 
 
 Skycoin is based on technology
 which introduces a new cryptographic primitive
