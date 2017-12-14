@@ -13,7 +13,7 @@ categories = [
 <!-- MarkdownTOC autolink="true" bracket="round" depth="1" -->
 
 - [Introduzione a Skycoin](#skycoin-introduction)
-- [Innovazioni e Difetti del Bitcoin e gli attuali protocolli Blockchain](#innovations-and-flaws-with-bitcoin-and-the-current-blockchain-protocols)
+- [Innovazioni e Difetti del Bitcoin e gli Attuali Protocolli Blockchain](#innovations-and-flaws-with-bitcoin-and-the-current-blockchain-protocols)
 - [Innovazioni Prodotte dal Bitcoin](#innovations-produced-by-bitcoin)
 - [Maggiori Difetti del Bitcoin](#major-flaws-of-bitcoin)
 - [Proprietá Desiderabili per Sistemi di Consenso Distribuito per Registri Finanziari](#desirable-properties-for-systems-of-distributed-consensus-for-financial-ledgers)
@@ -27,17 +27,17 @@ categories = [
 
 # Introduzione a Skycoin 
 
-Skycoin is based on technology
-which introduces a new cryptographic primitive
-known as a public broadcast channel. It also introduces
-a new consensus algorithm implementation, called
-Obelisk, which mitigates the commitment problems
-arising from the Proof-of-Work and mining processes
-underlying Bitcoin, thus addressing a host of security
-issues associated with the latter. Obelisk is not a
-single algorithm, but an implementation employing
-multiple techniques to deliver specific security
-guarantees.
+Skycoin é basato su una tecnologia 
+che introduce una nuova crittografica primitiva
+conosciuta come un canale di trasmissione pubblica. Implementa
+anche un nuovo algoritmo di consenso, chiamato
+Obelisk, il quale mitiga i problemi di impegno 
+che si presentano dal Proof-of-Work e dal processo di mining
+sottostante al Bitcoin, quindi affrontando una serie di problemi
+di sicurezza associati a quest'utlimo. Obelisk non é un
+singolo algoritmo, ma un'implementazione che impiega
+tecniche multiple per fornire garanzie di sicurezza
+specifiche.
 
 # Innovations And Flaws With Bitcoin And The Current Blockchain Protocols
 
