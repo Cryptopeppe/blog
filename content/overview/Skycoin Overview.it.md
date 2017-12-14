@@ -39,17 +39,17 @@ singolo algoritmo, ma un'implementazione che impiega
 tecniche multiple per fornire garanzie di sicurezza
 specifiche.
 
-# Innovations And Flaws With Bitcoin And The Current Blockchain Protocols
+# Innovazioni e Difetti del Bitcoin e gli Attuali Protocolli Blockchain
 
-In Bitcoin, new transactions are placed into
-a block, which is appended to the blockchain. Any
-peer in the Bitcoin network can create new blocks.
-Each block therefore has a single parent but one or
-more valid successors (children). The chains form a
-tree and the core problem that Bitcoin solves is getting
-every node in the network to agree on which of the
-prospective chains in the chain tree is the consensus
-blockchain.
+In Bitcoin, le nuove transazione vengono collocate
+in un blocco, aggiunto alla blockchain. Qualsiasi
+peer nella rete Bitcoin puó creare nuovi blocchi.
+Pertanto ogni blocco ha un solo genitore ma uno o piú
+validi successori (bambini). Le chains formano un
+albero e il problema principale che Bitcoin risolve é far in
+modo che ogni nodo nella rete sia d'accordo su quale delle 
+chains prospettate nell'albero é la blockchain
+di consenso.
 
 Bitcoin uses a technique called Proof‐of‐Work
 (PoW) to determine a unique blockchain. A valid
