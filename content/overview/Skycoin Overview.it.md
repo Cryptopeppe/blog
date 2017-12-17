@@ -64,9 +64,9 @@ piú elevata é richiesta la maggior quantitá di operazioni
 hash per produrre “la chain piú lunga” e   
 formare la chain consenso. La nozione di  “block
 depth” e “difficulty” crea un ordine su tutte le 
-chains lineari nell'albero blocco and only the most
-resource intensive chain is accepted to produce the
-consensus chain.
+chains lineari nell'albero blocco e solo la catena
+ad alta intensitá di risorse é accettata per produrre
+la chain di consenso.
 
 Bitcoin nodes connect to each other randomly
 and each node relays the most difficult chain of
