@@ -58,13 +58,13 @@ target. I nodi aggiungono transazioni a un nuovo blocco e
 randomicamente provano finché un hash valido per un 
 blocco viene scoperto.
 
-Viene usata una funzione per creare un ordine totale
-di chains nell'albero del blocco. la chain con la piú
-alta difficoltá e richiesto la maggior quantitá di hash
-operations per produrre “la chain piú lunga” e    (RIFARE TUTTA QUESTA PARTE)
-forma la chain consenso. The notion of “block
-depth” and “difficulty” create a total ordering over
-all linear chains in the block tree and only the most
+Viene usata una funzione per creare un ordine di chains
+nell'albero del blocco. Per la chain con la difficoltá
+piú elevata é richiesta la maggior quantitá di operazioni
+hash per produrre “la chain piú lunga” e   
+formare la chain consenso. La nozione di  “block
+depth” e “difficulty” crea un ordine su tutte le 
+chains lineari nell'albero blocco and only the most
 resource intensive chain is accepted to produce the
 consensus chain.
 
