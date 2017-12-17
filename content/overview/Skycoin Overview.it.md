@@ -68,25 +68,24 @@ chains lineari nell'albero blocco e solo la catena
 ad alta intensitá di risorse é accettata per produrre
 la chain di consenso.
 
-Bitcoin nodes connect to each other randomly
-and each node relays the most difficult chain of
-blocks that it knows about to its peers. If one node
-has a more difficult to produce chain than another
-connected peer, the peer will receive the blocks
-sequentially. The peer will evaluate the function and
-decide whether the received chain is more difficult
-to produce and thus potentially switch its consensus
-to the received chain. The peer will then advertise
-its new chain to its peers. In this way, consensus is
-propagated throughout the network and all nodes
-reach the same consensus.
+I nodi Bitcoin si connettono fra di loro in modo casuale
+e ogni nodo trasmette la catena di blocchi che conosce
+ai suoi simili. Se un nodo a maggior difficoltá di produrre
+la chain allora si un altro peer connesso, il nodo riceverá i
+blocchi sequenzialmente. Il nodo valuterá la funzione e 
+decide se la chain ricevuta sia piú complicata da 
+produrre e quindi potenzialmente scambiare il suo consenso 
+alla chain ricevuta. Il nodo, in seguito, la pubblicizzerá
+agli altri nodi. In questo modo, il consenso viene 
+propagato attraverso la rete e tutti i nodi raggiungono
+lo stesso consenso.
 
-Bitcoin does not assume that nodes have
-identities and does not assume that nodes are honest.
-Nodes may send other nodes any data and it cannot
-affect consensus decisions because difficulty is
-something that can be independently verifed on its
-own merit.
+Il Bitcoin non assume che i nodi abbiano identitá
+e non assume che i nodi siano onesti.
+I nodi possono mandare agli altri nodi ogni dato e ció
+non puó influenzare le decisioni di consenso perché la 
+difficulty puó essere verificata indipendentemente da
+sé.
 
 # Innovations Produced By Bitcoin
 
