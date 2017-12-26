@@ -114,22 +114,22 @@ inviare $20 a una persona e $5 indietro a te stesso.
 
 ### * Funzione PoW Difficulty Grandezza Blocco
 
-First use of a function that defines total
-ordering on block trees. The public ledger
-circumvents the double spending problem
-of traditional digital cash.
+Il primo utilizzo della funzione é definire 
+l'ordine dei blocchi. Il registro pubblico
+risolve il problema denominato double spending
+delle valute digitali tradizionali.
 
-# Major Flaws Of Bitcoin
+# Maggiori Difetti del Bitcoin
 
-These are the issues that must be addressed in the
-development of new cryptocurrency solutions. Bitcoin
-should be regarded as an embryonic cryptocurrency
-upon which future developments must improve. The
-technology upon which Skycoin is based addresses
-Bitcoin’s major deficiencies by redesigning the entire
-system of distributed consensus.
+Questi rappresentano i maggiori problemi che devono
+essere affrontati nello sviluppo di una cryptovaluta.
+Il Bitcoin dovrebbe essere considerato come una cryptovaluta
+embrionica sulla quale sviluppare futuri miglioramenti. La
+tecnologia sulla quale Skycoin é basata affronta le maggiori 
+deficienze del Bitcoin, riprogettando l'intero sistema di 
+consenso distribuito.
 
-### * Consensus Decisions In Bitcoin Are Not Final And Can Be Reverted
+### * Le Decisioni di Consenso nel Bitcoin non Sono Definitive e Possono Essere Ripristinate
 
 A person or organization that can rent
 or buy enough hashing power can
