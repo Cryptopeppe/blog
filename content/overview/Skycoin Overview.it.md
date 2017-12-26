@@ -131,12 +131,13 @@ consenso distribuito.
 
 ### * Le Decisioni di Consenso nel Bitcoin non Sono Definitive e Possono Essere Ripristinate
 
-A person or organization that can rent
-or buy enough hashing power can
-revert transactions.
+Una persona o un'organizzazione che possa
+affittare o comprare abbastanza hashing power
+puó ripristinare le transazioni.
 
-### * Bitcoin Achieves Network Consensus But Individual Bitcoin Nodes Are Highly Vulnerable To Adversaries Who Control The Routers Through Which Packets Pass
+### * Il Bitcoin Raggiunge il Consenso della Rete ma i Singoli Nodi della Rete Sono Altamente Vulnerabili da Parte di Avversari che Controllano i Routers Attraverso i Quali Passano i Pacchetti
 
+Un 
 A router-controlling adversary has
 absolute control over the view of a
 node and can arbitrarily influence the
