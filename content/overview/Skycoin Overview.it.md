@@ -137,27 +137,25 @@ puó ripristinare le transazioni.
 
 ### * Il Bitcoin Raggiunge il Consenso della Rete ma i Singoli Nodi della Rete Sono Altamente Vulnerabili da Parte di Avversari che Controllano i Routers Attraverso i Quali Passano i Pacchetti
 
-Un 
-A router-controlling adversary has
-absolute control over the view of a
-node and can arbitrarily influence the
-node’s consensus decisions.
+Un avversario che controlla il router
+ha l'assoluto controllo sulla vista
+di un nodo e puó influenzare arbitrariamente
+le decisioni di consenso del nodo.
 
-### * Bitcoin Exchanges Have Become Highly Vulnerable To Attack
+### * Gli Exchanges di Bitcoin Exchanges Sono Diventati Altamente Vulnerabili ad Attacchi
 
-Skilled attackers may employ 51%
-attacks and the buying and selling of
-alt coins at Bitcoin exchanges to drive
-the latter into insolvency.
+Gli attaccanti professionisti potrebbero
+impiegare l'attacco del 51% e comprare
+e vendere alt coins sugli exchanges di Bitcoin
+per guidare quest'ultimo verso l'insolvenza.
 
-### * Banks And Gambling Sites Have Become Vulnerable To 51% Attacks
+### * Le Banche e i Siti di gioco D'Azzardo sono diventati vulnerabili all'Attacco del 51% 
 
-### * As Bitcoin Matures, The Buying Of Options Against Bitcoin And Attacks Against The Networks Become More Profitable
+### * Al maturare del Bitcoin, L'Acquisto di Opzioni Contro il Bitcoin e Attacchi Contro la Sua Rete Diventano piú Redditizi
 
-In the future, successful attacks on
-Bitcoin could result in several hundred
-millions of dollars in profit from
-options trading.
+In futuro, attacchi al Bitcoin possono
+risultare in centinaia di milioni di dollari
+di profitto in opzioni trading.
 
 ### * States With Strong Capital Controls, As Well As Competing Corporations, May Directly Attack The Bitcoin Network To Protect Their Financial Interests
 
