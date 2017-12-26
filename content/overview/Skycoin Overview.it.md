@@ -52,7 +52,7 @@ chains prospettate nell'albero é la blockchain
 di consenso.
 
 Bitcoin usa una tecnica chiamata Proof‐of‐Work
-(PoW) per determinare una blockchain unica. Un blocco
+(PoW) per determinare ch la blockchain sia unica. Un blocco
 valido richiede un valore hash, al di sotto di un valore
 target. I nodi aggiungono transazioni a un nuovo blocco e
 randomicamente provano finché un hash valido per un 
@@ -87,33 +87,32 @@ non puó influenzare le decisioni di consenso perché la
 difficulty puó essere verificata indipendentemente da
 sé.
 
-# Innovations Produced By Bitcoin
+# Innovazioni prodotte dal Bitcoin
 
-### * The Blockchain
+### * La Blockchain
 
-A single data structure that everyone
-can possess.
+Una singola struttura dati che ogniuno
+puó possedere.
 
 ### * Public Ledger For Transactions
 
 Storing financial transactions in the
 blockchain.
 
-### * Use Of PoW And Difficulty Retargeting To Maintain A Constant Rate Of Block Production
+### * Uso del PoW e Ricalcolo della Difficultyt per Mantenere una Produzione di Blocchi Costante 
 
-### * Use Of Public Key Hashes As Addresses
+### * Uso di Chiavi Pubbliche come Hashes e Indirizzi 
 
-Public keys are not disclosed until
-used.
+Le chiavi pubbliche non vengono divulgate
+fin quando non usate.
 
-### * Use Of “outputs” For Balances
+### * Uso di “outputs” per i Saldi
 
-It ignores trying to create divisible digital
-cash: To pay $20 from a $25 output,
-send $20 to person and $5 back to
-yourself.
+Ignora il tentativo di creare denaro
+digitale divisibile: Per pagare $20 da un output di $25,
+inviare $20 a una persona e $5 indietro a te stesso.
 
-### * Pow Difficulty Function And Block Depth
+### * Funzione PoW Difficulty Grandezza Blocco
 
 First use of a function that defines total
 ordering on block trees. The public ledger
