@@ -169,31 +169,34 @@ Molte grandi pools hanno la capacitá
 di affittare potenza hash per sferrare
 un attacco di maggioranza.
 
-### * Hackers Can Use Numerous Security Holes In Routers And Networking Equipment To Steal Coins From Banks And Exchanges
+### * Gli Hackers Possono Usare Numerosi Buchi Nella Sicurezza Dei Routers E Nelle Apparecchiature Di Rete Per Rubare Monete Da Banche e Exchanges
 
-An attacker can control the peers
-connected to a Bitcoin node and ensure
-connections to attacker-controlled
-nodes. For instance, an attacker may
-introduce a deposit transaction to the
-side chain of a bank and get the bank
-to issue a withdraw transaction which
-is then relayed to the main network.
+Un attaccante puó controllare i peers
+connessi a un nodo Bitcoin e assicurare
+connessioni ai nodi controllati 
+dall'attacante. Per esempio, un
+attaccante potrebbe introdurre
+una transazione di deposito alla
+side chain di una banca e ottenere
+dalla banca l'emissione di un ritiro
+il quale viene poi inoltrato alla 
+rete principale.
 
-### * Bitcoin Cannot Offer Security At A Low Cost
+### * Il Bitcoin Non Puó Offrire Sicurezza A Basso Costo
 
-The Bitcoin network is using immense
-and exponentially growing amounts of
-electricity. Bitcoin’s security purposely
-relies upon creating as much electrical
-waste as possible. As security is related
-to the cost of achieving majority hash
-rate, the cost of running the Bitcoin
-network are constantly driven up. In
-a well-designed system, $1 in security
-costs $1000 to circumvent. In Bitcoin
-the ratio is $1 to $1. In addition, this is
-environmentally irresponsible.
+La rete Bitcoin sta usando immense e
+crescenti quantitá esponenziali di 
+elettricitá. La sicurezza del Bitcoin
+fa affidamento sul creare di proposito
+quanto piú spreco elettrico possibile.
+Siccome la sicurezza é correlata al costo
+del raggiungimento della maggior quantitá 
+di hash, il costo per mantenere la rete
+Bitcoin é costantemente in aumento. In un
+sistema ben progettato, $1 in sicurezza 
+costa $1000 per essere eluso. Nel Bitcoin
+il ratio é $1 a $1. In aggiunta, ció é 
+ambientalmente irresponsabile.
 
 ### * Bitcoin Fundamentally Cannot Decrease Transaction Times Without Compromising Security
 
