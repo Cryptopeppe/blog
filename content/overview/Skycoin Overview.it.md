@@ -80,8 +80,8 @@ agli altri nodi. In questo modo, il consenso viene
 propagato attraverso la rete e tutti i nodi raggiungono
 lo stesso consenso.
 
-Il Bitcoin non assume che i nodi abbiano identitá
-e non assume che i nodi siano onesti.
+Il Bitcoin non presuppone che i nodi abbiano identitá
+e non presuppone che i nodi siano onesti.
 I nodi possono mandare agli altri nodi ogni dato e ció
 non puó influenzare le decisioni di consenso perché la 
 difficulty puó essere verificata indipendentemente da
@@ -94,10 +94,10 @@ sé.
 Una singola struttura dati che ogniuno
 puó possedere.
 
-### * Public Ledger For Transactions
+### * Registro Pubblico Per Le Transazioni
 
-Storing financial transactions in the
-blockchain.
+Memorizzazione delle transazioni finanziarie
+sulla blockchain.
 
 ### * Uso del PoW e Ricalcolo della Difficultyt per Mantenere una Produzione di Blocchi Costante 
 
@@ -142,14 +142,14 @@ ha l'assoluto controllo sulla vista
 di un nodo e puó influenzare arbitrariamente
 le decisioni di consenso del nodo.
 
-### * Gli Exchanges di Bitcoin Exchanges Sono Diventati Altamente Vulnerabili ad Attacchi
+### * Gli Exchanges di Bitcoin Sono Diventati Altamente Vulnerabili ad Attacchi
 
 Gli attaccanti professionisti potrebbero
 impiegare l'attacco del 51% e comprare
 e vendere alt coins sugli exchanges di Bitcoin
 per guidare quest'ultimo verso l'insolvenza.
 
-### * Le Banche e i Siti di gioco D'Azzardo sono diventati vulnerabili all'Attacco del 51% 
+### * Le Banche e i Siti di Gioco D'Azzardo Sono Diventati Vulnerabili all'Attacco del 51% 
 
 ### * Al maturare del Bitcoin, L'Acquisto di Opzioni Contro il Bitcoin e Attacchi Contro la Sua Rete Diventano piú Redditizi
 
@@ -157,17 +157,17 @@ In futuro, attacchi al Bitcoin possono
 risultare in centinaia di milioni di dollari
 di profitto in opzioni trading.
 
-### * States With Strong Capital Controls, As Well As Competing Corporations, May Directly Attack The Bitcoin Network To Protect Their Financial Interests
+### * Stati Con Un Forte Controllo Dei Capitali, Cosí Come Societá Concorrenti, Potrebbero Direttamente Attaccare La Rete Bitcoin Per Proteggere I Loro Interessi Finanziari.
 
-Such entities may easily absorb the
-costs of attacking the network and
-undermining Bitcoin’s security.
+Queste entitá potrebbero facilmente
+assorbire i costi di un attacco alla rete
+e compromettere la sicurezza del Bitcoin. 
 
-### * Services That Allow “cloud Hashing” And Rental Of 3rd Party Hash Power Are Increasingly Successful
+### * I Servizi Che Permettono L'hashing In Cloud e L'affitto Di Potenza Hash Di Terze Parti Hanno Sempre Piú Successo 
 
-Many large pools now have the ability
-to rent the hash power for a majority
-attack.
+Molte grandi pools hanno la capacitá
+di affittare potenza hash per sferrare
+un attacco di maggioranza.
 
 ### * Hackers Can Use Numerous Security Holes In Routers And Networking Equipment To Steal Coins From Banks And Exchanges
 
