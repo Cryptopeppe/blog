@@ -198,12 +198,12 @@ costa $1000 per essere eluso. Nel Bitcoin
 il ratio é $1 a $1. In aggiunta, ció é 
 ambientalmente irresponsabile.
 
-### * Bitcoin Fundamentally Cannot Decrease Transaction Times Without Compromising Security
+### * Il Bitcoin Non Puó Fondamentalmente Ridurre i Tempi Di Transazione Senza Compromettere La Sicurezza
 
-Bitcoin transactions take on average
-10 minutes to get included in a block,
-and more time is required for more
-security.
+Le transazioni in Bitcoin richiedono
+in media 10 minuti per essere incluse
+in un blocco, e maggior tempo é richiesto per 
+maggior sicurezza.
 
 # Desirable Properties For Systems Of Distributed Consensus For Financial Ledgers
 
