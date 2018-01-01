@@ -384,18 +384,19 @@ contiene un hash del blocco precedente.
 
 # Obelisk
 
-Each Obelisk node (Skycoin Consensus Node)
-has a public key (an identity) and personal blockchain
-(a public broadcast channel). Consensus decisions
-and communication happen within the personal
-blockchains of each Obelisk node. This is a public
-record of everything a node does. This allows the
-community to audit nodes for cheating and collusion.
-It gives the community a way to identify nodes which
-are participating in attacks on the network and
-it makes public how decisions in the network are
-being made and which nodes are influencing those
-decisions.
+Ogni nodo Obelisk (Skycoin Consensus Node)
+ha una chiave pubblica (una identitá) e una blockchain
+personale (un canale di trasmissione pubblico).
+Le decisioni di consenso e comunicazione avvengono
+tra le blockchain personali di ogni nodo Obelisk.
+Questa é una registrazione pubblica di tutto quello
+che fa un nodo. Ció permette alla community di 
+identificare i nodi che stanno parteciapando in
+attacchi alla rete e rende pubblico come le decisioni
+all'interno della rete sono prese e quali nodi 
+influenzano tali decisioni.
+
+
 
 Each node has a list of other nodes that it
 subscribes to. Nodes with more subscribers are more
