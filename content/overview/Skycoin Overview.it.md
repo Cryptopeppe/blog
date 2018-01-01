@@ -273,21 +273,21 @@ ridondanti sopravviverá al fallimento completo di ogni
 singola misura. Un'ottima sicurezza richiede la differenziazione
 tra minaccie che sono esistenziali e minacci solamente fastidiose.
 
-While it is obvious that no single system can
-eliminate all security threats and simultaneously
-achieve all the objectives listed above, Skycoin
-represents the next step in cryptocurrency technology
-because it takes a modular layered approach to
-security and uses different systems to enforce
-particular guarantees. Skycoin security is focused on
-addressing the existential threats faced by Bitcoin and
-protecting users from day-to-day threats, attempting
-to give the highest degree of protection against the
-class of attacks that would infict the greatest losses
-upon its users, stakeholders and institutions. This
-requires a complete redesign of Bitcoin at both ends
-from wallet generation to blockchain consensus and
-fundamental innovation is several other areas.
+E' ovvio che nessun singolo sistema puó eliminare
+tutte le minaccie sulla sicurezza e simultaneamente
+realizzare tutti gli obiettivi elencati precedentemente,
+Skycoin rappresenta il prossimo step nella tecnologia delle 
+cryptovalute perché adotta un approccio modulare alla 
+sicurezza e usa differenti sistemi per mantenere
+particolari garanzie. La sicurezza di Skycoin si concentra 
+nell'aggredire le mianccie esistenziali affrontate dal Bitcoin
+e proteggendo gli utenti dalle minaccie di tutti i giorni, 
+sforzandosi di dare il piú elevato grado di protezione contro
+la classe di attacchi che infliggerebbero le piú grandi perdite 
+ai suoi utenti, sogetti interessati e istituzioni.
+Ció richiede una riprogettazione completa del Bitcoin da entrambe le
+estremitá, dalla generazione del waller fino al consenso della 
+blockchain e innovazioni fondamentali in diverse altre aree.
 
 Most of the losses in Bitcoin derive from
 deficiencies in design, a lack of usability, and end user
