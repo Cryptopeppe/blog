@@ -309,10 +309,13 @@ e mai lo sará perché sono stati i files irrecuperabili
 del wallet, sono stati persi i wallets, o l'incomprensione
 di cosa andava conservato nel file del wallet.
 
-Mt. Gox recently reported “finding” 200,000 Bitcoin
-in a wallet they were unaware carried Bitcoins. The
-wallet had been previously ignored and could have
-easily been deleted by mistake. Wallets are frequently
+Mt. Gox ha recentemente riportato di aver trovato
+200,000 bitcoin in un wallet del quale loro erano
+all'oscuro contenesse Bitcoins. Il wallet é stato
+precedentemente ignorato e sarabbe potuto essere stato
+facilmente cancellato per sbaglio.
+
+ Wallets are frequently
 mistaken as empty because computer software was
 unable to load a wallet created by software that is “too
 old”. Thus most security issues concerning Bitcoin
