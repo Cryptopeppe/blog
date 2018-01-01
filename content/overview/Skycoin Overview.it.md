@@ -339,7 +339,7 @@ di Skycoin é iterativo. Ci saranno cambiamenti,
 miglioramenti e perfezionamenti dal nostro lavoro
 sui dettagli, l'affrontare problemi e ricevere feedback.
 
-# Transparency And Security: Obelisk And Public Broadcast Channels
+# Trasparenza e Sicurezza: Obelisk e Canali Di Trasmissione Pubblici
 
 To address the commitment problems associated
 with the Bitcoin system, the technology underlying
