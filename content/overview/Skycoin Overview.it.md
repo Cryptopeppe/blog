@@ -396,22 +396,21 @@ attacchi alla rete e rende pubblico come le decisioni
 all'interno della rete sono prese e quali nodi 
 influenzano tali decisioni.
 
+Ogni nodo ha una lista di altri nodi alla quale si é
+iscritto. I nodi con piú iscritti sono piú fidati e 
+raccolgono piú influenza sulla rete. Se la community
+non si fida dei nodi che lo rappresentano o sentono
+che il potere nella rete é troppo concentrato ( o 
+non concentrato abbastanza) la community é capace 
+di spostare collettivamente l'equilibrio di potere
+nella rete cambiando collettivamente le loro relazioni
+di fiducia nella rete.
+
+L'inscrizione a un nodo puó essere formata a casaccio
+oppure attraverso il web of trust ( iscriversi ai nodi
+di persone che conosci e persone della comunitá di cui ti fidi).
 
 
-Each node has a list of other nodes that it
-subscribes to. Nodes with more subscribers are more
-“trusted” and yield more influence in the network. If
-the community does not trust the nodes representing
-them or feels that power within the network is too
-concentrated (or not concentrated enough) the
-community is able to collectively shift the balance of
-power in the network by collectively changing their
-trust relationships in the network.
-
-Node subscription relationships can be
-random and/or can be formed through web of trust
-(subscribe to nodes of people you know and people
-in the community you trust).
 
 When a node receives a new block from a chain
 it is subscribed to, it publishes the hash of the block
