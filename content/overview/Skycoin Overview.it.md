@@ -377,10 +377,10 @@ I timestamps possono solo andare su,
 i timestamps aumentano monotonamente
 con il conteggio della sequenza di blocco.
 
-### * A Block In The Middle Of The Chain Cannot Be Changed Without Invalidating Every Block That Comes After It
+### * Un Blocco Nel Mezzo Della Chain Non Puó Essere Cambiato Senza Invalidare Ogni Blocco Che Viene Dopo Di Esso
 
-In a hash chain, each block header contains
-a hash of the previous block.
+In una chain di hash, ogni intestazione del blocco
+contiene un hash del blocco precedente.
 
 # Obelisk
 
