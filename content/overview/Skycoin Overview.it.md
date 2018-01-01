@@ -341,19 +341,19 @@ sui dettagli, l'affrontare problemi e ricevere feedback.
 
 # Trasparenza e Sicurezza: Obelisk e Canali Di Trasmissione Pubblici
 
-To address the commitment problems associated
-with the Bitcoin system, the technology underlying
-our Skycoin implements the blockchain in the form
-of a public broadcast channel. Everyone can read
-the chain, but only the owner can mint blocks for it.
-To be valid for a personal chain, each block must be
-signed by the owners private key. Each node in this
-consensus algorithm system (Obelisk) has a personal
-blockchain and it is the core primitive in the Obelisk
-system.
+Per affrontare i problemi di impegno associati 
+al sistema Bitcoin, la tecnologia alla base di
+Skycoin implementa la blockchain nella forma di 
+canale pubblico di trasmissione. Chiunque puó leggere
+la chain, ma solamente il proprietario puó coniare blocchi 
+per la stessa. Per essere valida una chain personale, ogni
+blocco deve essere firmato dal proprietario della chaive privata.
+Ogni nodo in questo algoritmo di consenso (Obelisk) ha una 
+blockchain personale ed é il core primitibo nel sistema 
+Obelisk.
 
-The public broadcast channel imposes several
-constraints:
+Il canale pubblico di trasmissione migliora parecchi
+limiti:
 
 ### * Once A Block Is Published, It Cannot Be Unpublished
 
