@@ -289,26 +289,26 @@ Ció richiede una riprogettazione completa del Bitcoin da entrambe le
 estremitá, dalla generazione del waller fino al consenso della 
 blockchain e innovazioni fondamentali in diverse altre aree.
 
-Most of the losses in Bitcoin derive from
-deficiencies in design, a lack of usability, and end user
-mistakes rather than fundamental technical attacks in
-the software or mathematics. Skycoin must address
-both the looming existential mathematical threats
-and the security perils that Bitcoin’s incomplete and
-poorly thought out user experience has created for
-everyday users. The poor usability and design has
-forced users to compromise security, with millions
-of dollar routinely relying on insecure web wallets.
-Despite the frequent and massive thefts reported by
-the media on a daily basis, to date more Bitcoin have
-been lost due to usability issues than all the efforts of
-criminals to steal Bitcoin.
+Le maggiori perdite nel Bitcoin derivano dalla differenza
+nella progettazione, mancanza di usabilitá, ed errori da
+parte dell'utente finale invece di attacchi tecnici fondamentali
+ai software o matematici. Skycoin deve affrontare entrambe le 
+minaccie matematiche e i pericoli sulla sicurezza che l'esperienza 
+utente incompleta e scarsamente pensata di Bitcoin ha creato per
+l'utente di tutti i giorni. La povera usabilitá e il design hanno
+forzato gli utenti a comprometterne la sicurezza, con milioni di 
+dollari che fanno affidamento continuamento su wallet web insicuri.
+Malgrado i frequenti e massicci furti riportati dai media ogni giorno,
+ad oggi molti Bitcoin sono andati perduti a causa dei problemi
+di usabilitá e di tutti gli sforzi dei criminali di rubare
+Bitcoin.
 
-As many as half of all existing Bitcoins have
-never been moved from their initial addresses and
-never will be because they are lost as unrecoverable
-wallet files, lost wallets, or misunderstandings of
-what was actually being backed up in a wallet file.
+Circa la metá di tutti i Bitcoins esistenti non 
+é mai stata spostata dai loro indirizzi iniziali
+e mai lo sará perché sono stati i files irrecuperabili
+del wallet, sono stati persi i wallets, o l'incomprensione
+di cosa andava conservato nel file del wallet.
+
 Mt. Gox recently reported “finding” 200,000 Bitcoin
 in a wallet they were unaware carried Bitcoins. The
 wallet had been previously ignored and could have
