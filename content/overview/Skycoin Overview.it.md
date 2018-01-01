@@ -453,18 +453,19 @@ della rete Skycoin sono:
 - Ogni nodo é tenuto a rispondere alla community e all'ispezione di terze parti 
 - L'influenza nel sistema di consenso di Skycoin é democratica e trasparente (ma ineguale)
 
-# Simple Binary Consensus Algorithm: Choosing Between Two Blocks
+# Algoritmo Di Consenso Binario Semplice: Scegliendo Tra Due Blocchi
 
-Each voting decision is a hash pair (A,B). A is
-the hash of the parent of the block and B is the hash of
-the block. Each node votes on the next block
-it believes should be the consensus block. If 40% of
-the nodes it is subscribed to have the same candidate
-for consensus, the node changes its consensus to that
-block. The node flips randomly between candidates
-until consensus is reached.
+Ogni decisione di voto é una coppia hash (A,B). A é
+l'hash del genitore del blocco e B é l'hash del blocco.
+Ogni nodo vota sul blocco successivo che crede sia il 
+blocco di consenso. se il 40% dei nodi a cui é iscritto
+hanno lo stesso candidato per il consenso, il nodo cambia
+il suo consenso a quel blocco. Il nodo si sposta casualmente
+fra i candidati fino a che il consenso non viene raggiunto.
 
-# Consensus On Multiple Concurrent Branch Choices
+# Consenso Su Piú Scelte Parallele Simultanee
+
+Un sistema piú avanzato pubblica (A,BP),
 
 A more advanced system publishes (A,B,P),
 where P is a value from 0 to 1. P values across all
