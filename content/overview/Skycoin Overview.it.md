@@ -410,17 +410,17 @@ L'inscrizione a un nodo puó essere formata a casaccio
 oppure attraverso il web of trust ( iscriversi ai nodi
 di persone che conosci e persone della comunitá di cui ti fidi).
 
+quando un nodo riceve un nuovo blocco da una chain alla
+quale é iscritto pubblica l'hash del blocco. Ció é un 
+riconoscimento pubblico della ricezione del blocco.
+Ogni blocco e timestamped e ha contro riferimenti con i 
+blocchi delle altre chains. Ció crea una densa interconnessa
+catena di blocchi riconosciuta. Questa chains stabilisce
+relazioni casuali e puó agire come sistema distribuito di 
+timestamping come descritto nella prossima sezione.
 
 
-When a node receives a new block from a chain
-it is subscribed to, it publishes the hash of the block
-it publishes. This is a public acknowledgment of the
-receipt of the block. Each block is timestamped
-and counter-references blocks from other chains.
-This creates a dense interlinked chain of block
-acknowledgments. These chains establish causal
-relationships and can act as a distributed time
-stamping system as described in the next section.
+
 This allows the network to prove that data did not
 exist or was not published to the network or establish
 that particular nodes were active or offline during a
