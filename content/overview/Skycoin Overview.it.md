@@ -266,13 +266,12 @@ miners.
 
 # Filosofia Di Sicurezza Di Skycoin
 
-Security is a process of continuous identification
-and fortification against threats. A good system
-achieves “defense in depth”, has multiple redundant
-systems and will survive the complete failure of
-any individual measure. Good security requires the
-differentiation between threats which are existential
-and those which are mere annoyances.
+La sicurezza é un processo di continua identificazione 
+e fortificazione dalle minaccie. Un buon sistema
+realizza la "difesa in profonditá", ha piú sistemi 
+ridondanti sopravviverá al fallimento completo di ogni
+singola misura. Un'ottima sicurezza richiede la differenziazione
+tra minaccie che sono esistenziali e minacci solamente fastidiose.
 
 While it is obvious that no single system can
 eliminate all security threats and simultaneously
