@@ -419,41 +419,39 @@ catena di blocchi riconosciuta. Questa chains stabilisce
 relazioni casuali e puó agire come sistema distribuito di 
 timestamping come descritto nella prossima sezione.
 
+Ció permette alla rete di provare che i dati non esistono
+o non sono stati pubblicati nella rete o stabilire che dei
+precisi nodi erano attivi o offline durante un preciso
+intervallo di tempo.
 
+L'algoritmo di consenso Obelisk é basato sull'algoritmo
+casuale di consenso Ben-Or's.
 
-This allows the network to prove that data did not
-exist or was not published to the network or establish
-that particular nodes were active or offline during a
-particular time interval.
+Un attacco Sybil, in grafico casuale (peggior caso)
+permette ai nodi Sybil di controllare il consenso,
+ma i nodi non sono capaci di invertire le transazioni,
+rimuovendo l'unico incentivo di attaccare la rete.
+In un grafico del mondo reale la resistanza della
+rete all'attacco Sybil é molto alta e gestire un 
+nodo é moderatamente costoso in termini di bandwidth,
+rendendo le grandi botnets proibitive.
 
-The current Obelisk consensus algorithm
-is based upon Ben‐Or’s randomized consensus
-algorithm.
+Le relazioni di fiducia sono scarse e possono essere
+rescisse. Nel caso di un attacco, la rete reagisce
+interrompendo le connessioni ai nodi meno fidati 
+contraendole a un core piú piccolo di nodi fidati.
+I registri pubblici lasciati dalla blockchain 
+personale di ogni nodo rendono facile l'identificazione
+dei nodi che hanno partecipato in un attacco. Siccome
+i nodi attaccanti vengono identificati, gli individui
+recidono i loro rapporti con questi nodi, riducendo
+la loro influenza. Di conseguenza, i maggiori benefici
+della rete Skycoin sono:
 
-A Sybil attack in a random graph (worst case)
-allows the Sybil nodes to control consensus, but the
-nodes are unable to revert transactions, removing the
-only economic incentive to attack the network. In real
-world graphs the Sybil resistance of the network is
-actually very high and running a node is moderately
-costly in terms of bandwidth, which makes large
-botnets prohibitive.
-
-Trust relationships are scarce and can be
-rescinded. In the event of an attack, the network
-reacts by severing connections to less trustworthy
-nodes and contracting to a smaller core of trusted
-nodes. The public record left by each node’s personal
-blockchain makes it very easy to identify the nodes
-participating in an attack. As attacking nodes are
-identifed, individuals sever relationships with those
-nodes, reducing their influence. Therefore, the major
-benefits of the Skycoin network are:
-
-- Skycoin consensus is democratic and nodes are run by the community
-- Skycoin node consensus is public
-- Every node is accountable to the community and 3rd party audits
-- Influence within the skycoin consensus system is democratic and transparent (but unequal)
+- Il consenso in Skycoin é democratico e i nodi sono gestiti dalla community 
+- Il consenso del nodo Skycoin é pubblico
+- Ogni nodo é tenuto a rispondere alla community e all'ispezione di terze parti 
+- L'influenza nel sistema di consenso di Skycoin é democratica e trasparente (ma ineguale)
 
 # Simple Binary Consensus Algorithm: Choosing Between Two Blocks
 
