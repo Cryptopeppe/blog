@@ -205,62 +205,66 @@ in media 10 minuti per essere incluse
 in un blocco, e maggior tempo é richiesto per 
 maggior sicurezza.
 
-# Desirable Properties For Systems Of Distributed Consensus For Financial Ledgers
+### * Proprietá Desiderabili Per Sistemi Di Consenso Distribuiti Per Registri Finanziari
 
-The criteria on which Bitcoin can be improved are:
+I criteri secondo i quali il Bitcoin puó essere migliorato sono:
 
-### * No Double Spending
+### * Nessuna Doppia Spesa
 
-Once a transaction has executed,
-it should be impossible to revert
-consensus. Consensus should be as
-irreversible as possible.
+Una volta che una transazione viene eseguita,
+dovrebbe essere impossibile ripristinare
+il consenso. Il consenso dovrebbe essere
+il piú irreversibile possibile.
 
-### * Efficiency
+### * Efficienza
 
-The cost to run a perfectly secure
-ledger should be extremely low.
+Il costo per mantenere un registro
+perfettamente sicuro dovrebbe essere
+estremamente basso.
 
-### * Speed
+### * Velocitá
 
-The system should allow transactions
-to be confirmed within seconds.
+Il sistema dovrebbe permettere che le 
+transazioni siano confermate in pochi 
+secondi.
 
-### * Transparency
+### * Trasparenza
 
-It should be easy to audit and identify
-malicious nodes.
+Dovrebbe essere facile ispezionare e
+identificare nodi malevoli.
 
-### * Router Attack Security
+### * Sicurezza Da Un Attacco Al Router
 
-Nodes should be able to detect if their
-consensus differs from the network.
+I nodi dovrebbero essere capaci di rilevare
+se il consenso differisce dalla rete.
 
-Some security properties should remain intact
-even if the vast majority of nodes in the network are
-malicious and colluding.
+alcune proprietá di sicurezza dovrebbero rimanere
+intatte anche se la vasta maggioranza dei nodi nella rete
+é malevolo o sta colludendo.
 
-On a fundamental level, many of the security
-issues associated with the Bitcoin system arise from the
-inherent commitment problem of the Proof of Work
-and mining processes. Its security issues represent
-a real-world Byzantine General Problem. Incentives
-exist for participants to manipulate verification
-processes, by engaging in bribery and hacking for
-instance. Attackers will manipulate system clocks,
-compromise routers, use hash collisions, flood the
-network with hundreds of thousands of bots and
-exploit signature malleability.
+A livello fondamentale, molti dei problemi di
+sicurezza associati al sistema Bitcoin sorgono dal 
+problema di impegno intrinseco del Proof of Work e 
+il processo di mining. I suoi problemi di sicurezza
+rappresentano un problema reale del c.d Byzantine General 
+Problem. Eistono gli incentivi per i partecipanti di 
+manipolare il processo di verifica, impegnandosi in
+corruzione e hacking per esempio. Gli attaccanti possono
+manipolare i clocks di sistema, compromettere i routers,
+usare collisione di hash, inondare la rete con centinaia di 
+migliaia di bots e sfruttare la malleabilitá delle firme. 
 
-A secure system must not only protect against
-every known attack, but be robust enough to evolve
-and adapt to future attacks. Some issues in Bitcoin
-can be fixed, such as signature malleability. Other
-issues are fundamental and cannot be addressed
-without defining an entirely new framework, such as
-the reliance on Proof of Work and miners.
+Un sistema sicuro non solo protegge contro ogni
+attacco conosciuto, ma é robusto abbastanza per
+evolversi e adattarsi ad attacchi futuri. Alcuni
+problemi nel Bitcoin possono essere aggiustati, come
+la malleabilitá delle firme. Altri problemi sono 
+di carattere fondamentale e non possono essere
+affrontati senza definire interamente un nuovo
+framework, come la dipende dal Proof of Work e dai i 
+miners.
 
-# Skycoin Security Philosophy
+# Filosofia Di Sicurezza Di Skycoin
 
 Security is a process of continuous identification
 and fortification against threats. A good system
