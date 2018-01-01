@@ -314,13 +314,12 @@ Mt. Gox ha recentemente riportato di aver trovato
 all'oscuro contenesse Bitcoins. Il wallet é stato
 precedentemente ignorato e sarabbe potuto essere stato
 facilmente cancellato per sbaglio.
-
- Wallets are frequently
-mistaken as empty because computer software was
-unable to load a wallet created by software that is “too
-old”. Thus most security issues concerning Bitcoin
-occur at the level of usability, end users and exchange
-security.
+I wallet sono frquentemente scambiati vuoti per sbaglio
+perché il software del computer era incapace di caricare
+il wallet creato da un software risultato troppo vecchio.
+Pertanto la maggior parte dei problemi concernenti il
+Bitcoin si verificano a livello di usabilitá, utenti finali
+e sicurezza degli exchanges.
 
 The rest of this section covers some of the new
 techniques we have created in cooperation with our
