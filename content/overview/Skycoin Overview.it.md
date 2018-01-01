@@ -465,25 +465,23 @@ fra i candidati fino a che il consenso non viene raggiunto.
 
 # Consenso Su Piú Scelte Parallele Simultanee
 
-Un sistema piú avanzato pubblica (A,BP),
+Un sistema piú avanzato pubblica (A,B,P),
+dove P é un valore da 0 a 1. I valori di P
+su tutti i successori del blocco sarebbero 
+uguali a 1. Ció permette decisioni di 
+consenso simultaneo su chain multiple.
 
-A more advanced system publishes (A,B,P),
-where P is a value from 0 to 1. P values across all
-successors to block would sum to 1. This allows for
-concurrent consensus decisions on multiple chain
-branches.
+Se la maggioranza dei nodi nella rete sono
+onesti, convergeranno tutti verso lo stesso consenso.
 
-If the majority of nodes in the network are
-honest, they will also converge to the same consensus.
+Skycoin inoltre ha una forma limitata di Proof of stake.
+Pregiudiamo il voto a favore di blocchi con una maggiore
+commissione per la transazione.
 
-Skycoin also has a limited form of Proof of
-Stake. We bias voting in favor of blocks with a larger
-transaction fee.
+Se ci sono solo due possibili scelte di consenso per un
+determinato genitore ed entrambi i blocchi eseguono la tua
+transazione, allora la transazione é effettivamente eseguita
+indipendentemente da quale blocco viene scelto dalla rete.
+La probabilitá di revisione su una decisione di consenso presa
+da poco diminuisce esponenzialmente con il block depth.
 
-If there are only two possible consensus
-choices for a given parent and both blocks execute
-your transaction, then the transaction is effectively
-executed regardless of which of the two blocks end up
-chosen by the network. The probability of reversion
-of an early consensus decision declines exponentially
-with block depth.
