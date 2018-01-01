@@ -355,14 +355,14 @@ Obelisk.
 Il canale pubblico di trasmissione migliora parecchi
 limiti:
 
-### * Once A Block Is Published, It Cannot Be Unpublished
+### * Una Volta Che Un Blocco Viene Pubblicato, Non é Piú Possibile Annullare La Pubblicazione
 
-Blocks are replicated peer to peer to
-all subscribers. Once a block has been
-published, it spreads to all subscribers.
-You have to destroy all peers who have
-received the block to erase it from
-internet.
+I blocchi vengono replicati peer to peer
+a tutti i subscribers. Una volta che un
+blocco é stato pubblicato, si diffonde
+a tutti i subscribers. Devi distruggere
+tutti i peers che hanno ricevuto il blocco
+per eliminarlo da internet.
 
 ### * A Node Cannot Publish A Different Version Of An Earlier Block Without Detection
 
