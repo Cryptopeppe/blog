@@ -364,18 +364,18 @@ a tutti i subscribers. Devi distruggere
 tutti i peers che hanno ricevuto il blocco
 per eliminarlo da internet.
 
-### * A Node Cannot Publish A Different Version Of An Earlier Block Without Detection
+### * Un Nodo Non Puó Pubblicare Una Versione Differente Di Un Blocco Precedente Senza Averlo
 
-Blocks are numbered and it would
-be detected if the node signed two
-different blocks with the same
-sequence number.
+I blocchi sono numerati e sarebero
+rilevati se il nodo firma due 
+blocchi differenti con lo stesso
+numero sequenziale.
 
-### * A Node Cannot Backdate The Timestamp On The Receipt Of A Block, Without Delaying The Publication Of A Block
+### * Un Nodo Non Puó Retrodatare Il Timestamp Alla Ricevuta Di Un Blocco, Senza ritardare La Pubblicazione Di Un Blocco
 
-Timestamps only go up, timestamps
-increase monotonously with block
-sequence count.
+I timestamps possono solo andare su,
+i timestamps aumentano monotonamente
+con il conteggio della sequenza di blocco.
 
 ### * A Block In The Middle Of The Chain Cannot Be Changed Without Invalidating Every Block That Comes After It
 
