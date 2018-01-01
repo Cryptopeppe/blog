@@ -321,22 +321,23 @@ Pertanto la maggior parte dei problemi concernenti il
 Bitcoin si verificano a livello di usabilitá, utenti finali
 e sicurezza degli exchanges.
 
-The rest of this section covers some of the new
-techniques we have created in cooperation with our
-partners to address network level security issues and
-render the Skycoin blockchain more secure than
-previous networks.
+La restante parte di questa sezione copre alcune
+delle nuove tecniche che abbiamo creato in 
+cooperazione con i nostri partner per affrontare
+i problemi a livello di rete e rendere la 
+blockchain di Skycoin piú sicura della rete
+precedente.
 
-We have proven mathematically that our system
-achieves consensus, has the security properties we want
-and operates well under normal network conditions.
-We have some exciting new data‐structures that have
-not been seen in any coin or piece of software before.
-At the moment we are prototyping the system for
-deployment. The Skycoin development process is
-iterative. There will be changes, improvements and
-refinements as we work through the details, address
-known flaws, test the system and get feedback.
+Abbiamo provato matematicamente che il nostro
+sistema realizza il consenso, ha le proprietá di 
+sicurezza che vogliamo e opera bene sotto condizioni
+di rete normali. Abbiamo alcune nuove eccitanti strutture dati che non 
+sono mai state viste in alcuna moneta o pezi di  software
+prima d'ora. Al momento stiamo prototipando il sistema per la 
+successiva messa in funzione. Il processo di sviluppo
+di Skycoin é iterativo. Ci saranno cambiamenti,
+miglioramenti e perfezionamenti dal nostro lavoro
+sui dettagli, l'affrontare problemi e ricevere feedback.
 
 # Transparency And Security: Obelisk And Public Broadcast Channels
 
