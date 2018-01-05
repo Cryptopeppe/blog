@@ -1,5 +1,5 @@
 +++
-title = "Skywire - Skycoin Meshnet Project"
+title = "Skywire - Progetto Meshnet Skycoin "
 tags = [
     "Skywire",
     "Meshnet",
@@ -12,15 +12,15 @@ categories = [
 ]
 +++
 
-![Skywire: The New Internet](https://i.imgur.com/9Jk0gLe.jpg)
+![Skywire: Il Nuovo Internet](https://i.imgur.com/9Jk0gLe.jpg)
 
 <!-- MarkdownTOC autolink="true" bracket="round" -->
 
-- [Introduction](#introduction)
-- [Routing: Overview](#routing-overview)
-- [Incentives: Payment Protocol](#incentives-payment-protocol)
-- [Source Routing: Link Layer Encryption](#source-routing-link-layer-encryption)
-    - [Example Protocol: Nodes `A` and `B`](#example-protocol-nodes-a-and-b)
+- [Introduzione](#introduction)
+- [Routing: Panoramica](#routing-overview)
+- [Incentivi: Protocollo di Pagamento](#incentives-payment-protocol)
+- [Fonte di Routing: Crittografia a Livello di Collegamento](#source-routing-link-layer-encryption)
+    - [Protocollo di Esempio: Nodi `A` e` B`](#example-protocol-nodes-a-and-b)
     - [Possible Improvements:](#possible-improvements)
 - [IPv4 Gateway: Bypassing Existing ISPs](#ipv4-gateway-bypassing-existing-isps)
     - [Example One](#example-one)
